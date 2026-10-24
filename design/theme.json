@@ -14,67 +14,72 @@
         {
           "slug": "night",
           "name": "Night",
-          "color": "#070F14"
+          "color": "#080E11"
         },
         {
           "slug": "ink",
           "name": "Ink",
-          "color": "#0B1217"
+          "color": "#0A1A1F"
         },
         {
           "slug": "storm",
-          "name": "Storm cloud",
-          "color": "#2F3131"
+          "name": "Slate",
+          "color": "#343C3E"
         },
         {
           "slug": "text",
           "name": "Text",
-          "color": "#161B1F"
+          "color": "#172124"
         },
         {
           "slug": "muted",
-          "name": "Muted",
-          "color": "#6A5B4B"
+          "name": "Slate blue",
+          "color": "#4A5457"
         },
         {
           "slug": "dust",
-          "name": "Dust",
-          "color": "#B29B83"
+          "name": "Stone",
+          "color": "#9AA3A4"
         },
         {
           "slug": "parchment",
-          "name": "Parchment",
-          "color": "#E3D2BE"
+          "name": "Title white",
+          "color": "#F5F1E8"
         },
         {
           "slug": "rule",
           "name": "Rule",
-          "color": "#DECCBA"
+          "color": "#E2D5B8"
         },
         {
           "slug": "paper",
           "name": "Daybreak",
-          "color": "#FBF0DF"
+          "color": "#FBF4E4"
         },
         {
           "slug": "paper-deep",
           "name": "Daybreak deep",
-          "color": "#F4E6D2"
+          "color": "#F3E7CC"
         },
         {
           "slug": "ember",
-          "name": "Ember",
-          "color": "#F07000"
+          "name": "Orange",
+          "color": "#ED8515"
         },
         {
           "slug": "ember-glow",
-          "name": "Ember glow (on dark only)",
-          "color": "#F87400"
+          "name": "Amber (on dark only)",
+          "color": "#E3A237"
+        },
+        {
+          "slug": "accent",
+          "name": "Burnt orange (large text only)",
+          "color": "#C66019"
         },
         {
           "slug": "ember-text",
-          "name": "Ember ink",
-          "color": "#9E4706"
+          "name": "Rust",
+          "color": "#964211"
         }
       ]
     },
@@ -82,14 +87,9 @@
       "fluid": true,
       "fontFamilies": [
         {
-          "slug": "display",
-          "name": "Oswald",
-          "fontFamily": "Oswald, Inter, sans-serif"
-        },
-        {
           "slug": "serif",
-          "name": "Baskervville",
-          "fontFamily": "Baskervville, 'Libre Baskerville', Georgia, serif"
+          "name": "EB Garamond",
+          "fontFamily": "'EB Garamond', Garamond, Georgia, serif"
         },
         {
           "slug": "sans",
@@ -113,10 +113,10 @@
         {
           "slug": "essay",
           "name": "Essay",
-          "size": "21px",
+          "size": "22px",
           "fluid": {
-            "min": "19px",
-            "max": "21px"
+            "min": "20px",
+            "max": "22px"
           }
         },
         {
@@ -248,7 +248,7 @@
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--serif)",
           "fontSize": "var(--wp--preset--font-size--essay)",
-          "lineHeight": "1.72"
+          "lineHeight": "1.7"
         }
       },
       "core/pullquote": {
