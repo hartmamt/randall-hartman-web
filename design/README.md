@@ -11,3 +11,8 @@ Artboards: Homepage, Single essay, Design tokens.
 - Scroll micro-animations are pure CSS (`animation-timeline: view()`), gated by `@supports` and `prefers-reduced-motion`.
 
 Open items: Oord/Gushee endorsement wording and credentials, retailer links, sign-off on draft copy (hero intro, From Randall note).
+
+## Alternate directions (Oct 24)
+- **B · The Torn Page** (wild): https://claude.ai/artifact/DTJEpHf3WhU4FFG3PcVpbA. Layered torn-paper parallax hero (transparent gpt-image layers), Fraunces variable type animated on scroll, word-by-word quote reveal, horizontal-scroll essays, view transitions, cursor light, 3D cover tilt.
+- **C · Questions Welcome** (edgier): https://claude.ai/artifact/3NM87XUbmNKpucgUdzfoNy. Riso/xerox zine: Archivo variable width stretched by scroll, strike-through manifesto, cursor-preview essay index, sticky stacked cards, halftone portrait made from Randall's real photo, CSS `@property` read-percentage counter.
+Shared images live in `assets/`; each prototype folder holds only its own extra textures.

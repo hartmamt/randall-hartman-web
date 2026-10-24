@@ -1,0 +1,472 @@
+<title>Randall Hartman · Questions Welcome</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a xeroxed zine on newsprint. Visible grid, hard edges, riso orange from the cover, variable-width type that stretches as you scroll. */
+:root{
+  --black:#0E0E0E; --paper:#F2EDE4; --paper-2:#E7E0D3; --orange:#ED8515; --orange-2:#F59A35; --slate:#4A5457; --line:#0E0E0E; --dim:#BDB6A9;
+  --grot:"Archivo","Arial Narrow",Arial,sans-serif; --serif:"Instrument Serif",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+@property --pct{syntax:"<integer>";inherits:true;initial-value:0}
+@property --w{syntax:"<number>";inherits:true;initial-value:62}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--black);font:400 17px/1.55 var(--grot);font-stretch:100%;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--black)}
+.grain{position:fixed;inset:0;z-index:80;pointer-events:none;background:url(assets/grain.jpg) repeat;background-size:420px;mix-blend-mode:multiply;opacity:.16}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+img{max-width:100%;display:block}
+.mono{font-family:var(--mono)}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(var(--gl),3vw);padding-right:max(var(--gr),3vw)}
+.cols{position:absolute;inset:0;pointer-events:none;max-width:1360px;margin:0 auto;padding-left:max(var(--gl),3vw);padding-right:max(var(--gr),3vw);display:grid;grid-template-columns:repeat(12,minmax(0,1fr))}
+.cols i{border-left:1px solid rgba(14,14,14,.07)}.cols i:last-child{border-right:1px solid rgba(14,14,14,.07)}
+.on-black .cols i{border-color:rgba(242,237,228,.07)}
+.label{font:600 12px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 22px;font:800 15px/1 var(--grot);font-stretch:110%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;border:2px solid var(--black);background:var(--orange);color:var(--black);box-shadow:5px 5px 0 var(--black);cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--black)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--black)}
+.btn.inv{background:var(--paper)}
+.on-black .btn{border-color:var(--paper);box-shadow:5px 5px 0 var(--paper)}
+.on-black .btn:hover{box-shadow:7px 7px 0 var(--paper)}
+
+/* top */
+.ticker-top{background:var(--black);color:var(--paper);font:400 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding-block:9px}
+.ticker-top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ticker-top b{color:var(--orange);font-weight:600}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--paper);border-bottom:2px solid var(--black)}
+.nav .wrap{display:flex;align-items:stretch;justify-content:space-between;min-height:64px}
+.nav .name{display:flex;align-items:center;font:900 22px/1 var(--grot);font-stretch:75%;letter-spacing:-.01em;text-transform:uppercase;text-decoration:none;padding-right:20px;border-right:2px solid var(--black)}
+.nav ul{display:flex;list-style:none;margin:0;padding:0}
+.nav li{display:flex}
+.nav li a{display:flex;align-items:center;padding:0 18px;border-left:2px solid var(--black);font:700 13px var(--grot);font-stretch:110%;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .15s}
+.nav li a:hover{background:var(--black);color:var(--paper)}
+.nav li a.hot{background:var(--orange)}
+@media (max-width:760px){.nav li.opt{display:none}.nav .name{font-size:18px}}
+
+/* hero */
+.hero{position:relative;border-bottom:2px solid var(--black);overflow:hidden}
+.hero-grid{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 0;padding-block:clamp(28px,4vw,48px) clamp(48px,6vw,80px)}
+.hero .meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:clamp(18px,3vw,36px)}
+.mega{grid-column:1/-1;margin:0;font:900 clamp(56px,11.5vw,210px)/.82 var(--grot);font-stretch:calc(var(--w) * 1%);letter-spacing:-.025em;text-transform:uppercase;--w:62}
+.mega .row{display:block;white-space:nowrap}
+.mega .q{color:var(--orange)}
+.mega .s{font:italic 400 .7em/1 var(--serif);text-transform:none;letter-spacing:-.01em;color:var(--black)}
+.hero-low{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:clamp(28px,4vw,52px);align-items:end}
+.hero-low .say{grid-column:1/span 6;min-width:0}
+.hero-low .say p{margin:0;font:400 clamp(26px,2.6vw,40px)/1.1 var(--serif)}
+.hero-low .say .label{margin-top:16px;color:var(--slate)}
+.hero-low .say .acts{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.portrait{grid-column:8/span 5;position:relative;min-width:0}
+.portrait .frame{border:2px solid var(--black);box-shadow:12px 12px 0 var(--orange);background:var(--paper)}
+.portrait img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.portrait .cap{display:flex;justify-content:space-between;border-top:2px solid var(--black);padding:10px 12px}
+.stamp{position:absolute;right:-20px;top:-40px;width:150px;height:150px;z-index:2}
+.stamp svg{width:100%;height:100%;overflow:visible}
+.stamp text{font:700 12.5px var(--mono);letter-spacing:.18em;text-transform:uppercase;fill:var(--black)}
+.stamp .dot{fill:var(--orange);stroke:var(--black);stroke-width:2}
+@media (max-width:860px){.hero-low .say,.portrait{grid-column:1/-1}.portrait{max-width:420px;margin-top:24px}.stamp{right:-6px;width:120px;height:120px}}
+
+/* marquee */
+.marquee{background:var(--orange);border-bottom:2px solid var(--black);overflow:hidden;padding-block:14px}
+.marquee .run{display:flex;width:max-content;animation:run 32s linear infinite}
+.marquee span{font:900 clamp(22px,2.6vw,36px)/1 var(--grot);font-stretch:70%;text-transform:uppercase;white-space:nowrap;padding-right:28px}
+.marquee span i{font:italic 400 1.05em var(--serif);text-transform:none;padding:0 10px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* book */
+.book{position:relative;border-bottom:2px solid var(--black);overflow:hidden}
+.book .bolt{position:absolute;left:-12%;top:-4%;width:60%;max-width:860px;mix-blend-mode:multiply;opacity:.95;pointer-events:none;-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side,#000 55%,transparent 100%)}
+.book-grid{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(24px,3vw,40px);padding-block:clamp(64px,8vw,120px)}
+.book .covercol{grid-column:1/span 4;min-width:0}
+.book .covercol img{border:2px solid var(--black);box-shadow:16px 16px 0 var(--black);aspect-ratio:1650/2550;object-fit:cover;width:100%}
+.book .copy{grid-column:6/span 7;min-width:0}
+.book h2{margin:12px 0 0;font:900 clamp(56px,8vw,140px)/.84 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.book .sub{margin:18px 0 0;font:italic 400 clamp(26px,2.4vw,36px)/1.1 var(--serif)}
+.book .body{margin:22px 0 0;max-width:600px;font-size:19px;line-height:1.6}
+.spec{margin:30px 0 0;border-top:2px solid var(--black);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.spec div{padding:12px 12px 12px 0;border-bottom:2px solid var(--black)}
+.spec div+div{padding-left:12px;border-left:2px solid var(--black)}
+.spec dt{font:600 11px var(--mono);text-transform:uppercase;color:var(--slate)}
+.spec dd{margin:4px 0 0;font:800 18px var(--grot);font-stretch:85%;text-transform:uppercase}
+.redact{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px;margin-top:clamp(20px,3vw,40px)}
+.redact figure{margin:0;border:2px solid var(--black);background:var(--paper);padding:22px}
+.redact .bars{display:flex;flex-direction:column;gap:8px}
+.redact .bars i{display:block;height:20px;background:var(--black);transform-origin:left}
+.redact .bars i:nth-child(2){width:86%}.redact .bars i:nth-child(3){width:64%}
+.redact figcaption{margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.redact figcaption b{font:800 18px var(--grot);font-stretch:85%;text-transform:uppercase}
+@media (max-width:860px){.book .covercol{grid-column:1/-1;max-width:320px}.book .copy{grid-column:1/-1}.book .bolt{width:120%;left:-30%;top:0;opacity:.6}}
+
+/* strike section */
+.strike-sec{position:relative;background:var(--black);color:var(--paper);border-bottom:2px solid var(--black)}
+.strike-sec .wrap{position:relative;padding-block:clamp(80px,10vw,150px)}
+.lines{margin:0;padding:0;list-style:none}
+.lines li{position:relative;width:fit-content;max-width:100%;font:900 clamp(44px,8vw,132px)/.95 var(--grot);font-stretch:68%;text-transform:uppercase;letter-spacing:-.015em;color:var(--dim)}
+.lines li::after{content:"";position:absolute;left:-2%;right:-2%;top:48%;height:.12em;background:var(--orange);transform:rotate(-1.5deg) scaleX(1);transform-origin:left}
+.lines li.final{color:var(--orange);font:italic 400 clamp(64px,11vw,190px)/1 var(--serif);text-transform:none;letter-spacing:-.02em;margin-top:.15em}
+.lines li.final::after{display:none}
+.note-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:clamp(48px,6vw,90px)}
+.note-grid .lbl{grid-column:1/span 3}
+.note-grid .txt{grid-column:4/span 7;font:400 clamp(24px,2.2vw,32px)/1.3 var(--serif);color:var(--paper)}
+.note-grid .txt p{margin:0 0 18px}
+.note-grid .txt .by{font:600 13px var(--mono);text-transform:uppercase;color:var(--orange)}
+@media (max-width:760px){.note-grid .lbl,.note-grid .txt{grid-column:1/-1}}
+
+/* pick */
+.pick{position:relative;border-bottom:2px solid var(--black)}
+.pick .wrap{position:relative;padding-block:clamp(64px,8vw,110px)}
+.pick h2{margin:0;font:900 clamp(44px,6vw,96px)/.88 var(--grot);font-stretch:62%;text-transform:uppercase}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));border:2px solid var(--black);margin-top:34px}
+.qbtn{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-height:170px;padding:20px;border:0;border-right:2px solid var(--black);border-bottom:2px solid var(--black);margin:0 -2px -2px 0;background:var(--paper);text-align:left;cursor:pointer;font:800 clamp(22px,2vw,28px)/1.05 var(--grot);font-stretch:80%;text-transform:uppercase;color:var(--black);transition:background .15s}
+.qbtn .n{font:600 12px var(--mono)}
+.qbtn:hover{background:var(--paper-2)}
+.qbtn[aria-pressed="true"]{background:var(--orange)}
+.answer{border:2px solid var(--black);border-top:0;background:var(--black);color:var(--paper);padding:24px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px;align-items:center}
+.answer p{grid-column:1/span 5;margin:0;font:italic 400 clamp(24px,2.2vw,32px)/1.15 var(--serif)}
+.answer .links{grid-column:6/span 7;display:flex;flex-direction:column}
+.answer .links a{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #333;text-decoration:none;font:700 17px var(--grot);text-transform:uppercase;font-stretch:90%}
+.answer .links a:hover{color:var(--orange)}
+.answer.flash{animation:flash .35s steps(2)}
+@keyframes flash{0%{background:var(--orange)}100%{background:var(--black)}}
+@media (max-width:760px){.answer p,.answer .links{grid-column:1/-1}}
+
+/* index */
+.index{position:relative;border-bottom:2px solid var(--black)}
+.index .wrap{position:relative;padding-block:clamp(64px,8vw,110px)}
+.index-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.index-head h2{margin:0;font:900 clamp(56px,9vw,160px)/.82 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.erow{position:relative;display:grid;grid-template-columns:70px 130px minmax(0,1fr) 60px;gap:20px;align-items:center;padding:18px 10px;border-top:2px solid var(--black);text-decoration:none;color:var(--black);transition:background .12s,color .12s}
+.erow:last-child{border-bottom:2px solid var(--black)}
+.erow .t{font:800 clamp(22px,2.4vw,36px)/1.02 var(--grot);font-stretch:85%;text-transform:uppercase;transition:font-stretch .3s}
+.erow .go{justify-self:end;font:600 20px var(--mono)}
+.erow:hover{background:var(--black);color:var(--paper)}
+.erow:hover .t{font-stretch:110%;color:var(--orange)}
+.peek{position:fixed;left:0;top:0;z-index:70;width:260px;aspect-ratio:4/3;border:2px solid var(--black);box-shadow:8px 8px 0 var(--orange);pointer-events:none;opacity:0;transform:translate(-50%,-50%) rotate(-3deg) scale(.8);transition:opacity .15s,transform .2s;background:var(--black)}
+.peek img{width:100%;height:100%;object-fit:cover}
+.peek.on{opacity:1;transform:translate(-50%,-50%) rotate(-3deg) scale(1)}
+@media (hover:none),(max-width:760px){.peek{display:none}}
+@media (max-width:760px){.erow{grid-template-columns:44px minmax(0,1fr) 30px}.erow .d{display:none}}
+
+/* about stack */
+.about{position:relative;background:var(--paper-2);border-bottom:2px solid var(--black)}
+.about .wrap{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:clamp(64px,8vw,110px)}
+.about .left{grid-column:1/span 5;min-width:0}
+.about .left .stick{position:sticky;top:110px}
+.about h2{margin:0;font:900 clamp(48px,6vw,104px)/.86 var(--grot);font-stretch:62%;text-transform:uppercase}
+.about .left p{margin:20px 0 0;font:400 clamp(22px,1.8vw,26px)/1.35 var(--serif)}
+.about .tree{margin-top:26px;border:2px solid var(--black);box-shadow:10px 10px 0 var(--black);max-width:360px}
+.about .tree img{aspect-ratio:1093/1366;object-fit:cover}
+.stack{grid-column:7/span 6;min-width:0;display:flex;flex-direction:column;gap:20px}
+.scard{position:sticky;top:calc(100px + var(--i) * 18px);background:var(--paper);border:2px solid var(--black);padding:26px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 -6px 0 var(--paper-2)}
+.scard.o{background:var(--orange)}.scard.k{background:var(--black);color:var(--paper)}
+.scard .big{font:900 clamp(48px,6vw,96px)/.85 var(--grot);font-stretch:62%;text-transform:uppercase}
+.scard p{margin:12px 0 0;font:400 22px/1.3 var(--serif)}
+@media (max-width:860px){.about .left,.stack{grid-column:1/-1}.about .left .stick{position:static}.scard{position:relative;top:auto}}
+
+/* join */
+.join{position:relative;background:var(--orange);border-bottom:2px solid var(--black);overflow:hidden}
+.join .wrap{position:relative;padding-block:clamp(70px,9vw,130px)}
+.join h2{margin:0;font:900 clamp(52px,9vw,160px)/.82 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em}
+.join h2 em{font:italic 400 .8em var(--serif);text-transform:none}
+.join p{max-width:620px;margin:22px 0 0;font:400 clamp(22px,2vw,28px)/1.3 var(--serif)}
+.big-form{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border:2px solid var(--black);background:var(--paper);box-shadow:10px 10px 0 var(--black)}
+.big-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.big-form input{flex:1 1 280px;min-width:0;height:84px;border:0;background:transparent;padding:0 20px;font:800 clamp(22px,3vw,40px) var(--grot);font-stretch:80%;text-transform:uppercase;color:var(--black)}
+.big-form input::placeholder{color:#9C958A}
+.big-form input:focus{outline:none;background:#fff}
+.big-form button{flex:0 0 auto;min-height:84px;padding:0 30px;border:0;border-left:2px solid var(--black);background:var(--black);color:var(--paper);font:800 18px var(--grot);font-stretch:110%;text-transform:uppercase;cursor:pointer}
+.big-form button:hover{background:var(--slate)}
+.big-form .done{flex-basis:100%;margin:0;padding:26px 20px;font:italic 400 32px var(--serif)}
+@media (max-width:560px){.big-form button{flex-basis:100%;border-left:0;border-top:2px solid var(--black)}}
+
+.foot{background:var(--black);color:var(--paper);padding-block:30px 26px}
+.foot .huge{font:900 clamp(56px,13.6vw,250px)/.8 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.03em;white-space:nowrap;--w:62;font-stretch:calc(var(--w) * 1%)}
+.foot .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:20px;font:400 12px var(--mono);text-transform:uppercase}
+.foot a{text-decoration:none}.foot a:hover{color:var(--orange)}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}
+
+/* essay */
+.essay{padding-bottom:100px}
+.essay-top{border-bottom:2px solid var(--black);position:relative}
+.essay-top .wrap{position:relative;padding-block:clamp(40px,6vw,80px)}
+.essay h1{margin:16px 0 0;font:900 clamp(48px,8vw,140px)/.84 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.02em;view-transition-name:etitle}
+.essay .meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px}
+.ebody{max-width:720px;margin:56px auto 0;padding-left:var(--gl);padding-right:var(--gr);font:400 clamp(22px,1.7vw,25px)/1.5 var(--serif)}
+.ebody p{margin:0 0 1em}
+.ebody .pq{margin:1.4em 0;padding:24px;border:2px solid var(--black);box-shadow:8px 8px 0 var(--orange);font:900 clamp(30px,3.4vw,44px)/.95 var(--grot);font-stretch:68%;text-transform:uppercase;background:var(--paper)}
+.back{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid var(--black);padding:10px 14px;font:600 12px var(--mono);text-transform:uppercase;cursor:pointer}
+.back:hover{background:var(--black);color:var(--paper)}
+.readout{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:70;background:var(--black);color:var(--orange);padding:10px 14px;font:600 14px var(--mono)}
+.readout::after{content:counter(p) "% READ";counter-reset:p var(--pct)}
+
+::view-transition-old(root){animation:.3s steps(3) both vtout}
+::view-transition-new(root){animation:.3s steps(3) both vtin}
+@keyframes vtout{to{opacity:0;transform:translateX(-30px)}}
+@keyframes vtin{from{opacity:0;transform:translateX(30px)}}
+
+.proto{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:85;display:flex;gap:10px;align-items:center;background:var(--paper);border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);padding:8px 12px;font:600 11px var(--mono);text-transform:uppercase}
+.proto label{display:flex;gap:6px;align-items:center;cursor:pointer}
+
+/* ===== scroll-driven ===== */
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
+  .motion .mega{animation:stretch linear both;animation-timeline:view();animation-range:exit 0% exit 90%}
+  @keyframes stretch{from{--w:62}to{--w:125}}
+  .motion .mega .row:nth-child(2){animation:slide linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes slide{to{transform:translateX(-12%)}}
+  .motion .stamp svg{animation:turn linear both;animation-timeline:scroll(root);animation-range:0 1500px}
+  @keyframes turn{to{transform:rotate(360deg)}}
+  .motion .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 50%}
+  @keyframes rv{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+  .motion .slam{animation:slam linear both;animation-timeline:view();animation-range:entry 10% entry 70%}
+  @keyframes slam{from{transform:translateX(-30px);clip-path:inset(0 100% 0 0)}to{transform:none;clip-path:inset(0 0 0 0)}}
+  .motion .book h2{animation:bstretch linear both;animation-timeline:view();animation-range:entry 20% cover 50%}
+  @keyframes bstretch{from{font-stretch:125%;letter-spacing:.05em}to{font-stretch:62%;letter-spacing:-.02em}}
+  .motion .book .bolt{animation:bolt linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  @keyframes bolt{from{transform:translateY(-10%) rotate(-6deg) scale(.9);clip-path:inset(0 0 100% 0)}35%{clip-path:inset(0 0 0 0)}to{transform:translateY(8%) rotate(4deg) scale(1.05);clip-path:inset(0 0 0 0)}}
+  .motion .redact .bars i{animation:bar linear both;animation-timeline:view();animation-range:entry 30% cover 40%}
+  @keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .motion .lines li{animation:dimin linear both;animation-timeline:view();animation-range:entry 40% cover 50%}
+  @keyframes dimin{from{color:var(--paper)}to{color:var(--dim)}}
+  .motion .lines li::after{animation:strike linear both;animation-timeline:view();animation-range:entry 60% cover 50%}
+  @keyframes strike{from{transform:rotate(-1.5deg) scaleX(0)}to{transform:rotate(-1.5deg) scaleX(1)}}
+  .motion .lines li.final{animation:love linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+  @keyframes love{from{opacity:0;transform:translateY(50px) rotate(-3deg);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+  .motion .erow{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .motion .scard{animation:card linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  @keyframes card{from{transform:translateY(60px) rotate(2deg)}to{transform:none}}
+  .motion .foot .huge{animation:stretch linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+  .motion .readout{animation:pct linear both;animation-timeline:scroll(root)}
+  @keyframes pct{to{--pct:100}}
+}}
+@media (prefers-reduced-motion:reduce){.marquee .run{animation:none}html{scroll-behavior:auto}}
+@supports not (animation-timeline:view()){.readout{display:none}}
+</style>
+
+<div id="app" class="motion">
+<div class="grain" aria-hidden="true"></div>
+<div class="ticker-top"><div class="wrap"><span>RANDALLHARTMAN.COM</span><span><b>●</b> Writing from the other side of certainty</span><span>Est. 2009 · Vol. 2026</span></div></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="name" href="#top" data-home>Randall Hartman</a>
+    <ul>
+      <li class="opt"><a href="#index">Essays</a></li>
+      <li><a href="#book">The Book</a></li>
+      <li class="opt"><a href="#about">About</a></li>
+      <li><a class="hot" href="#join">Subscribe</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="home-view">
+<section class="hero" id="top">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap hero-grid">
+    <div class="meta label"><span>Writer / Author / Former pastor</span><span>Fig. 01: A line from the memoir</span></div>
+    <h1 class="mega"><span class="row"><span class="q">“</span>God could</span><span class="row">be a God-</span><span class="row">awful God<span class="q">.”</span></span></h1>
+    <div class="hero-low">
+      <div class="say">
+        <p>The God I feared wasn’t the God I found. Forty years in the pulpit, and now the honest version.</p>
+        <p class="label">Randall K. Hartman · <em style="text-transform:none">A God Awful God</em> · Dec 8, 2026</p>
+        <div class="acts">
+          <a class="btn" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene →</a>
+          <a class="btn inv" href="#index">Read the essays ↓</a>
+        </div>
+      </div>
+      <figure class="portrait" style="margin:0">
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path></defs><circle class="dot" cx="75" cy="75" r="72"></circle><text><textPath href="#circ">Ex-pastor ✶ Still ordained ✶ Still asking ✶</textPath></text></svg>
+        </div>
+        <div class="frame"><img src="assets/c_portrait.jpg" alt="Halftone portrait of Randall Hartman"><figcaption class="cap label"><span>R. Hartman</span><span>Riso / 2026</span></figcaption></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="run">
+  <span>Doubt is not a sin <i>✶</i> A God Awful God <i>✶</i> December 8, 2026 <i>✶</i> Questions welcome <i>✶</i> The God I feared wasn’t the God I found <i>✶</i></span>
+  <span>Doubt is not a sin <i>✶</i> A God Awful God <i>✶</i> December 8, 2026 <i>✶</i> Questions welcome <i>✶</i> The God I feared wasn’t the God I found <i>✶</i></span>
+</div></div>
+
+<section class="book" id="book" aria-labelledby="bookH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <img class="bolt" src="assets/ink.jpg" alt="">
+  <div class="wrap book-grid">
+    <div class="covercol rv"><img src="assets/cover.jpg" alt="Cover of A God Awful God by Randall K. Hartman"></div>
+    <div class="copy">
+      <p class="label rv">Fig. 02 · The memoir</p>
+      <h2 id="bookH">A God Awful God</h2>
+      <p class="sub rv">The God I Feared Wasn’t the God I Found</p>
+      <p class="body rv">A seven-year-old opens the family Bible and finds God glaring from the clouds, lightning in His eyes. Six decades, a pulpit, and a church trial later, Randall tells how that picture finally broke, and who it had been aimed at all along.</p>
+      <dl class="spec rv">
+        <div><dt>Publisher</dt><dd>Seven Lanterns</dd></div>
+        <div><dt>Release</dt><dd>12.08.26</dd></div>
+        <div><dt>Format</dt><dd>[TBD]</dd></div>
+      </dl>
+      <div class="rv" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:30px">
+        <a class="btn" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Free excerpt →</a>
+        <a class="btn inv" href="#book">Pre-order [links soon]</a>
+      </div>
+    </div>
+    <div class="redact">
+      <figure class="rv"><div class="bars" aria-hidden="true"><i></i><i></i><i></i></div><figcaption><b>Thomas Jay Oord</b><span class="label">[Endorsement pending]</span></figcaption></figure>
+      <figure class="rv"><div class="bars" aria-hidden="true"><i></i><i></i><i></i></div><figcaption><b>David P. Gushee</b><span class="label">[Endorsement pending]</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="strike-sec on-black" aria-labelledby="strikeH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="label" id="strikeH" style="color:var(--orange);margin:0 0 24px">Fig. 03 · What I was taught</p>
+    <ul class="lines">
+      <li>God is angry.</li>
+      <li>God is watching.</li>
+      <li>God is keeping score.</li>
+      <li class="final">God is love.</li>
+    </ul>
+    <div class="note-grid">
+      <div class="lbl label" style="color:var(--dim)">From Randall</div>
+      <div class="txt rv">
+        <p>I spent forty years explaining God from behind a pulpit. For most of them I was afraid of Him. This is where I write about what changed, and about the people my church taught me to fear.</p>
+        <p class="by">— R.H.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pick" aria-labelledby="pickH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="label">Fig. 04 · New here?</p>
+    <h2 id="pickH" class="slam">Pick your question.</h2>
+    <div class="qgrid" id="qgrid" role="group" aria-label="Start where you are"></div>
+    <div class="answer" id="answer" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="index" id="index" aria-labelledby="indexH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="index-head"><h2 id="indexH" class="slam">Index</h2><span class="label">Latest 6 of ~270 essays · weekly</span></div>
+    <div id="rows"></div>
+    <div style="margin-top:28px"><a class="btn inv" href="#index">Full archive →</a></div>
+  </div>
+</section>
+<div class="peek" id="peek" aria-hidden="true"><img id="peekImg" src="assets/lightning.jpg" alt=""></div>
+
+<section class="about" id="about" aria-labelledby="aboutH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="left"><div class="stick">
+      <p class="label">Fig. 05 · About</p>
+      <h2 id="aboutH" class="slam">The pastor who kept asking.</h2>
+      <p>Randall K. Hartman. Writer, photographer, husband of 51 years, grandfather of seven. Still an ordained elder in the Church of the Nazarene.</p>
+      <figure class="tree" style="margin-top:26px"><img src="assets/c_tree.jpg" alt="Riso-printed photograph of a bare tree in fog, by Randall Hartman"></figure>
+      <p class="label" style="margin-top:12px">↑ One of his photographs</p>
+    </div></div>
+    <div class="stack">
+      <div class="scard" style="--i:0"><span class="label">01 / Ministry</span><div><div class="big">~40 yrs</div><p>Lead pastor in Indiana, Ohio, and Michigan.</p></div></div>
+      <div class="scard o" style="--i:1"><span class="label">02 / Transition</span><div><div class="big">7 states</div><p>Interim pastor from Oregon to Alaska, helping churches in between.</p></div></div>
+      <div class="scard k" style="--i:2"><span class="label" style="color:var(--orange)">03 / 2021</span><div><div class="big">Trial</div><p>Charged for writing that LGBTQ+ people belong. No guilty verdict.</p></div></div>
+      <div class="scard" style="--i:3"><span class="label">04 / Writing</span><div><div class="big">2 books</div><p><em>Tom’s List</em> (2016) and <em>A God Awful God</em> (2026). Also HuffPost, The Good Men Project, Sixty and Me.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join" aria-labelledby="joinH">
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="label">Fig. 06 · The letter</p>
+    <h2 id="joinH" class="slam">Get the <em>first scene</em> free.</h2>
+    <p>New essays, notes from the book, and excerpts nobody else gets. Occasional. Honest. Unsubscribe whenever.</p>
+    <form class="big-form" id="form">
+      <label for="em">Email address</label>
+      <input id="em" type="email" autocomplete="email" placeholder="Your email" required>
+      <button type="submit">Send it →</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<main id="essay-view" class="essay" hidden>
+  <div class="essay-top">
+    <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <button class="back" type="button" data-home>← Index</button>
+      <h1 id="eT"></h1>
+      <div class="meta label"><span id="eD"></span><span>Randall Hartman</span><span>4 min</span></div>
+    </div>
+  </div>
+  <div class="ebody" id="eB"></div>
+  <div class="readout" aria-hidden="true"></div>
+</main>
+
+<footer class="foot on-black">
+  <div class="wrap">
+    <div class="huge" aria-hidden="true">Randall Hartman</div>
+    <div class="row"><span>© 2026 Randall Hartman · Version C</span><nav aria-label="Footer"><a href="#index">Essays</a><a href="#book">Book</a><a href="#about">About</a><a href="#about">Photography</a><a href="#join">Newsletter</a></nav></div>
+  </div>
+</footer>
+
+<div class="proto" role="region" aria-label="Prototype controls"><span>Ver. C</span><label for="mt"><input id="mt" type="checkbox" checked> Motion</label></div>
+</div>
+
+<script>
+(function(){
+  const app=document.getElementById('app');
+  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const IMGS=['assets/lightning.jpg','assets/desk.jpg','assets/ink.jpg','assets/c_tree.jpg','assets/cover.jpg','assets/c_portrait.jpg'];
+  const E=[
+    {t:'When We Aim God’s Lightning Toward Other People',d:'15.10.26',x:'What if the God you were taught to fear is still shaping the way you see other people?',full:true},
+    {t:'What If You Gave Yourself Permission to Ask?',d:'07.10.26',x:'Have you ever had a question you were afraid to ask?'},
+    {t:'Do You Worship a God-Awful God?',d:'30.09.26',x:'Have you ever thought God was awful? Be honest.'},
+    {t:'What If the God You Fear Looks Like Someone From Your Past?',d:'23.09.26',x:'I was seven years old when the church gave God a name I feared: Father.'},
+    {t:'My Silence Became Part of the Answer',d:'16.09.26',x:'Fifteen-year-old Meg raised her left hand to ask a question.'},
+    {t:'I’ve Changed My Mind about the LGBTQ+',d:'Earlier',x:'The essay that led to a church trial.'}
+  ];
+  document.getElementById('rows').innerHTML=E.map((e,i)=>`<a class="erow" href="#essay" data-essay="${i}" data-img="${IMGS[i]}"><span class="label">N°${String(E.length-i).padStart(3,'0')}</span><span class="label d">${e.d}</span><span class="t">${esc(e.t)}</span><span class="go" aria-hidden="true">→</span></a>`).join('');
+
+  // pick your question
+  const Q=[
+    {l:'Was I wrong to be afraid of God?',a:'Maybe the fear was taught. These start there.',e:[3,2]},
+    {l:'Are my questions allowed?',a:'Yes. Questions are not a threat to faith.',e:[1,4]},
+    {l:'Who actually belongs?',a:'When your picture of God changes, so does your neighbor.',e:[0,5]},
+    {l:'What happened to you?',a:'The whole story is in the book.',book:true}
+  ];
+  let cur=0; const g=document.getElementById('qgrid'), ans=document.getElementById('answer');
+  function draw(f){
+    g.innerHTML=Q.map((q,i)=>`<button type="button" class="qbtn" aria-pressed="${i===cur}" data-q="${i}"><span class="n">Q.0${i+1}</span><span>${esc(q.l)}</span></button>`).join('');
+    const q=Q[cur];
+    ans.innerHTML=`<p>${esc(q.a)}</p><div class="links">${q.book?'<a href="#book"><span>About the book</span><span>→</span></a><a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener"><span>Free first scene</span><span>↗</span></a>':q.e.map(i=>`<a href="#essay" data-essay="${i}"><span>${esc(E[i].t)}</span><span>→</span></a>`).join('')}</div>`;
+    if(f){ans.classList.remove('flash');void ans.offsetWidth;ans.classList.add('flash');}
+  }
+  g.addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;cur=+b.dataset.q;draw(true);});
+  draw(false);
+
+  // cursor peek
+  const peek=document.getElementById('peek'), pimg=document.getElementById('peekImg');
+  document.getElementById('rows').addEventListener('pointermove',e=>{const r=e.target.closest('.erow');if(!r){peek.classList.remove('on');return;}if(!pimg.src.endsWith(r.dataset.img))pimg.src=r.dataset.img;peek.style.left=(e.clientX+150)+'px';peek.style.top=e.clientY+'px';peek.classList.add('on');});
+  document.getElementById('rows').addEventListener('pointerleave',()=>peek.classList.remove('on'));
+
+  // essay view
+  const home=document.getElementById('home-view'), ev=document.getElementById('essay-view');
+  const BODY=`<p>What if the God you were taught to fear is still shaping the way you see other people?</p><p>I often think about the moment, now more than six decades ago, when I opened our family Bible and saw God staring back at me. He stood on the clouds with a scowl on His face. But it was His eyes that made me tremble. Lightning bolts shot from them, and in my young mind, they seemed aimed directly at me.</p><p>No wonder I slammed the cover shut and ran for cover.</p><p>For years, I thought the damage from that picture was mostly personal. It made me afraid of God. It took me decades to understand the greater danger.</p><p>A frightening picture of God does more than frighten the person who believes it. When we become convinced that God looks at certain people with anger, disgust, or condemnation, sooner or later we may begin looking at them the same way.</p><div class="pq">“The lightning had not stayed inside the picture. We had learned to aim it at people.”</div><p>Who did your church teach you God was angry with? Who was described as dangerous, sinful, rebellious, deceived, or outside the reach of God’s love?</p><p>In my story, one of the groups eventually caught in that lightning was the LGBTQ community. But the pattern is much larger than one issue. Churches have aimed it at doubters, divorced people, women who would not stay in their assigned roles, people who left the church, people who asked forbidden questions, and anyone who made certainty uncomfortable.</p><p>Maybe the important question is not only, “What do I believe about God?” Maybe it is also, “What kind of person is my picture of God teaching me to become?”</p>`;
+  let lastY=0;
+  const swap=fn=>(document.startViewTransition&&app.classList.contains('motion')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)?document.startViewTransition(fn):fn();
+  function openE(i){const e=E[i];lastY=scrollY;peek.classList.remove('on');swap(()=>{document.getElementById('eT').textContent=e.t;document.getElementById('eD').textContent=e.d;document.getElementById('eB').innerHTML=e.full?BODY:`<p>${esc(e.x)}</p><p class="label" style="color:var(--slate)">[Full essay loads from WordPress. This prototype includes the full text only for N°006.]</p>`;home.hidden=true;ev.hidden=false;scrollTo(0,0);});}
+  function goHome(hash){if(home.hidden){swap(()=>{ev.hidden=true;home.hidden=false;if(hash){const t=document.querySelector(hash);if(t)t.scrollIntoView();}else scrollTo(0,lastY);});}else if(hash){const t=document.querySelector(hash);if(t)t.scrollIntoView({behavior:'smooth'});}}
+  document.addEventListener('click',e=>{
+    const es=e.target.closest('[data-essay]');if(es){e.preventDefault();openE(+es.dataset.essay);return;}
+    const h=e.target.closest('[data-home]');if(h){e.preventDefault();goHome(h.getAttribute('href')&&h.getAttribute('href').length>1&&!home.hidden?h.getAttribute('href'):null);return;}
+    const a=e.target.closest('a[href^="#"]');if(a&&a.getAttribute('href').length>1){e.preventDefault();goHome(a.getAttribute('href'));}
+  });
+  document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.em.value.includes('@')){f.em.focus();return;}f.innerHTML='<p class="done">Sent. (On the live site, MailerLite takes it from here.)</p>';});
+  const mt=document.getElementById('mt');mt.addEventListener('change',()=>app.classList.toggle('motion',mt.checked));
+})();
+</script>
