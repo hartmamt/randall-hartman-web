@@ -14,72 +14,72 @@
         {
           "slug": "night",
           "name": "Night",
-          "color": "#080E11"
+          "color": "#030B0E"
         },
         {
           "slug": "ink",
           "name": "Ink",
-          "color": "#0A1A1F"
+          "color": "#0A161B"
         },
         {
           "slug": "storm",
           "name": "Slate",
-          "color": "#343C3E"
+          "color": "#22313B"
         },
         {
           "slug": "text",
           "name": "Text",
-          "color": "#172124"
+          "color": "#10242D"
         },
         {
           "slug": "muted",
           "name": "Slate blue",
-          "color": "#4A5457"
+          "color": "#47555F"
         },
         {
           "slug": "dust",
           "name": "Stone",
-          "color": "#9AA3A4"
+          "color": "#9AA6AE"
         },
         {
           "slug": "parchment",
           "name": "Title white",
-          "color": "#F5F1E8"
+          "color": "#F6F3EA"
         },
         {
           "slug": "rule",
           "name": "Rule",
-          "color": "#E2D5B8"
+          "color": "#E3D8BC"
         },
         {
           "slug": "paper",
           "name": "Daybreak",
-          "color": "#FBF4E4"
+          "color": "#FAF6EA"
         },
         {
           "slug": "paper-deep",
           "name": "Daybreak deep",
-          "color": "#F3E7CC"
+          "color": "#F2EAD3"
         },
         {
           "slug": "ember",
-          "name": "Orange",
-          "color": "#ED8515"
+          "name": "Doorway gold",
+          "color": "#F6B90E"
         },
         {
           "slug": "ember-glow",
-          "name": "Amber (on dark only)",
-          "color": "#E3A237"
+          "name": "Subtitle gold (on dark only)",
+          "color": "#F5CA4B"
         },
         {
           "slug": "accent",
-          "name": "Burnt orange (large text only)",
-          "color": "#C66019"
+          "name": "Road amber (large text only)",
+          "color": "#C47413"
         },
         {
           "slug": "ember-text",
-          "name": "Rust",
-          "color": "#964211"
+          "name": "Bronze",
+          "color": "#8A5A10"
         }
       ]
     },
