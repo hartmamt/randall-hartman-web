@@ -1,6 +1,7 @@
 # Design: homepage mockup (Oct 2026)
 
 Mockup canvas (Claude Design): https://claude.ai/artifact/YGVFgo4djC1bzcr8f9VTRG
+Clickable prototype (shareable with Randall): https://claude.ai/artifact/TD4E6SaRy6u7TeMP8ZFxX7 (source: `prototype/index.html`, images from `assets/`)
 Artboards: Homepage, Single essay, Design tokens.
 
 - `theme.json` is a draft of the settings/styles the block theme will start from. It mirrors the tokens artboard.
