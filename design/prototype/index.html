@@ -2,14 +2,14 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,700..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: warm daybreak paper for reading, cover-collage night bands for the book and newsletter. Tokens sampled from the final cover. */
+/* Layout: warm paper for reading, night bands for the hero, book and newsletter. Night/slate/gold sampled from the final cover; the amber-orange of the cover's path as the accent. The cover itself stays hidden until the reveal. */
 :root{
   --night:#030B0E; --ink:#0A161B; --slate:#22313B; --text:#10242D; --body2:#33424B; --muted:#47555F;
   --stone:#9AA6AE; --stone-2:#B7C0C6; --stone-3:#C9D0D4; --white:#F6F3EA;
   --paper:#FAF6EA; --paper-deep:#F2EAD3; --rule:#E3D8BC; --rule-2:#CFC3A2;
-  --orange:#F6B90E; --orange-hi:#F8C73A; --amber:#F5CA4B; --burnt:#C47413; --rust:#8A5A10; --rust-deep:#5E3D08;
+  --orange:#E08322; --orange-hi:#EB9536; --gold:#F6B90E; --amber:#F5CA4B; --burnt:#C47413; --rust:#8A5A10; --rust-deep:#5E3D08;
   --serif:"EB Garamond",Garamond,Georgia,serif; --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --wide:1200px; --measure:680px;
   --gut-l:max(16px,env(safe-area-inset-left,0px)); --gut-r:max(16px,env(safe-area-inset-right,0px));
@@ -34,8 +34,8 @@ h1,h2,h3{text-wrap:balance}
 .h-xl{margin:0;font:400 clamp(38px,4.6vw,60px)/1.02 var(--serif);letter-spacing:-.015em;color:var(--ink)}
 .h-huge{margin:0;font:400 clamp(46px,6.8vw,96px)/.96 var(--serif);letter-spacing:-.02em;color:var(--ink)}
 .h-xl em,.h-huge em{color:var(--burnt)}
-.lead{font:400 clamp(19px,1.5vw,22px)/1.6 var(--serif);color:var(--body2)}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s;background:none}
+.lead{font:400 clamp(20px,1.6vw,23px)/1.6 var(--serif);color:var(--body2)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;font:600 14px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s;background:none}
 .btn:hover{transform:translateY(-1px)}
 .btn-orange{background:var(--orange);color:var(--ink)} .btn-orange:hover{background:var(--orange-hi);color:var(--ink)}
 .btn-line{border-color:var(--ink);color:var(--ink)} .btn-line:hover{background:var(--ink);color:var(--paper)}
@@ -44,7 +44,7 @@ h1,h2,h3{text-wrap:balance}
 a:hover .arrow,button:hover .arrow{transform:translateX(4px)}
 .textlink{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--ink);padding:10px 0 4px}
 .textlink:hover{color:var(--rust);border-color:var(--rust)}
-.meta{font:600 11px/1.5 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.meta{font:600 12.5px/1.5 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .ph{display:inline-block;font:600 10px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--rust);background:var(--paper);padding:5px 8px;border:1px dashed var(--rust)}
 section{padding-block:clamp(72px,9vw,130px)}
 .band-dark{position:relative;overflow:hidden;background:var(--night);color:var(--white)}
@@ -53,16 +53,16 @@ section{padding-block:clamp(72px,9vw,130px)}
 .band-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* announcement + header */
-.announce{background:var(--ink);color:var(--white);text-align:center;font-size:13px;padding-block:10px;letter-spacing:.03em}
+.announce{background:var(--ink);color:var(--white);text-align:center;font-size:15px;padding-block:10px;letter-spacing:.03em}
 .announce strong{font:600 13px var(--serif);letter-spacing:.2em;color:var(--amber);margin-right:8px}
-.announce a{color:var(--white);font-weight:600;margin-left:8px}
+.announce a{color:var(--amber);font-weight:600;margin-left:8px}
 .site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(250,246,234,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .mark{display:inline-flex;width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);align-items:center;justify-content:center;font:italic 500 17px var(--serif)}
 .brand-name{font:500 23px var(--serif);letter-spacing:-.005em}
 .nav{display:flex;align-items:center;gap:26px}
-.nav a.nl{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;padding:12px 2px;position:relative}
+.nav a.nl{color:var(--text);text-decoration:none;font-size:16px;font-weight:500;padding:12px 2px;position:relative}
 .nav a.nl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .nav a.nl:hover::after,.nav a.nl[aria-current="page"]::after{transform:scaleX(1)}
 .nav a.nl[aria-current="page"]{color:var(--rust)}
@@ -75,6 +75,23 @@ section{padding-block:clamp(72px,9vw,130px)}
   .nav a.nl{padding:14px 0;border-top:1px solid var(--rule);font-size:16px}
   .nav .btn{margin-top:12px;justify-content:center}
 }
+
+/* hero: night sky with daybreak rising from below; portrait left, words right */
+.hero-night{position:relative;overflow:hidden;background:var(--night);color:var(--white);padding-block:clamp(56px,8vw,120px) clamp(80px,10vw,140px)}
+.hero-night .h-huge{color:var(--white)}
+.hero-night .h-huge em{color:var(--orange)}
+.hero-night .lead{color:var(--stone-3)}
+.hero-night .eyebrow{color:var(--amber)}
+.daybreak{position:absolute;left:-20%;right:-20%;bottom:-55%;height:110%;background:radial-gradient(50% 55% at 50% 100%,rgba(224,131,34,.65),rgba(246,185,14,.22) 48%,rgba(3,11,14,0) 72%);pointer-events:none}
+.hero-night .hero-grid{position:relative;flex-direction:row-reverse}
+.pframe{flex:1 1 320px;min-width:0;max-width:420px;margin:0 auto;position:relative}
+.pframe .ph2{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink)}
+.pframe .ph2 img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.pframe::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--gold);pointer-events:none}
+.pframe::after{content:"";position:absolute;left:-14px;bottom:-30px;width:46%;height:4px;background:var(--orange)}
+.pframe figcaption{margin-top:44px;font:500 20px/1.3 var(--serif);color:var(--white)}
+.pframe figcaption span{display:block;margin-top:4px;font:600 13px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.btn-row .btn-line-dark{border-color:var(--stone-2)}
 
 /* hero */
 .hero{padding-block:clamp(48px,8vw,110px) clamp(72px,9vw,120px)}
@@ -94,13 +111,43 @@ section{padding-block:clamp(72px,9vw,130px)}
 .namecard .r{font:600 13px/1.6 var(--serif);letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
 @media (max-width:560px){.portrait .back{right:-8px;bottom:-12px;left:28px;top:28px}.namecard{left:-6px}}
 
-.strip{background:var(--ink);color:var(--white)}
+.strip{background:var(--paper-deep);color:var(--ink)}
 .strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.strip-grid>div{padding:28px 28px 28px 0;border-right:1px solid var(--slate)}
+.strip-grid>div{padding:28px 28px 28px 0;border-right:1px solid var(--rule-2)}
 .strip-grid>div:last-child{border-right:0}
 .strip .big{font:400 30px var(--serif)}
-.strip .meta{color:var(--stone);margin-top:6px}
-@media (max-width:520px){.strip-grid>div{border-right:0;border-bottom:1px solid var(--slate)}.strip-grid>div:last-child{border-bottom:0}}
+.strip .meta{color:var(--muted);margin-top:6px}
+@media (max-width:520px){.strip-grid>div{border-right:0;border-bottom:1px solid var(--rule-2)}.strip-grid>div:last-child{border-bottom:0}}
+
+/* what I was taught: crossed-out lines */
+.strike-sec{position:relative;background:#0E0E0E;color:var(--white)}
+.lines{margin:0;padding:0;list-style:none}
+.lines li{position:relative;width:fit-content;max-width:100%;font:900 clamp(44px,8vw,128px)/.98 "Archivo","Arial Narrow",Arial,sans-serif;font-stretch:68%;text-transform:uppercase;letter-spacing:-.01em;color:#BDB6A9}
+.lines li::after{content:"";position:absolute;left:-2%;right:-2%;top:48%;height:.12em;background:var(--orange);transform:rotate(-1.5deg) scaleX(1);transform-origin:left}
+.lines li.final{color:var(--gold);font:italic 400 clamp(60px,10vw,170px)/1 var(--serif);text-transform:none;letter-spacing:-.02em;margin-top:.15em}
+.lines li.final::after{display:none}
+.strike-note{display:flex;flex-wrap:wrap;gap:24px 60px;margin-top:clamp(48px,6vw,90px)}
+.strike-note .lbl{flex:0 0 200px;font:600 13px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#BDB6A9}
+.strike-note .txt{flex:1 1 420px;max-width:760px;font:400 clamp(23px,2.1vw,30px)/1.4 var(--serif);color:var(--white)}
+.strike-note .txt p{margin:0 0 18px}
+
+/* cover placeholder (the real cover stays private until subscribers see it first) */
+.cover-soon{display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;aspect-ratio:1650/2550;padding:12% 10%;text-decoration:none;color:var(--white);background:radial-gradient(90% 55% at 50% 108%,rgba(224,131,34,.55),rgba(246,185,14,.15) 50%,transparent 75%),linear-gradient(180deg,#10242D,#030B0E);border:1px solid rgba(245,202,75,.35);box-shadow:30px 40px 80px rgba(0,0,0,.55)}
+.cover-soon:hover{color:var(--white)}
+.cover-soon .cs-t{font:500 clamp(30px,3.4vw,44px)/1.02 var(--serif);letter-spacing:.02em}
+.cover-soon .cs-s{margin-top:12px;font:italic 400 18px/1.3 var(--serif);color:var(--amber)}
+.cover-soon .cs-badge{font:600 12.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--orange);padding:9px 14px}
+.cover-soon .cs-b{font:500 22px var(--serif)}
+.cover-soon .cs-note{margin-top:8px;font:400 14px/1.4 var(--sans);color:var(--stone-2)}
+
+/* speaking */
+.speak{background:var(--paper-deep)}
+.topics{list-style:none;margin:30px 0 0;padding:0}
+.topics li{padding:20px 0;border-top:1px solid var(--rule-2)}
+.topics .tt{font:400 26px/1.25 var(--serif);color:var(--ink)}
+.topics .td{margin-top:6px;font:400 19px/1.5 var(--serif);color:var(--muted)}
+.venues{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.venues span{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule-2);border-radius:999px;font:500 15px var(--sans);color:var(--text);background:var(--paper)}
 
 /* book */
 .book-grid{position:relative;display:flex;flex-wrap:wrap;gap:clamp(48px,7vw,100px);align-items:center}
@@ -109,7 +156,7 @@ section{padding-block:clamp(72px,9vw,130px)}
 .book-copy{flex:1 1 460px;min-width:0}
 .book-title{margin:0;font:500 clamp(46px,6vw,82px)/.95 var(--serif);letter-spacing:.04em;text-transform:uppercase;color:#fff}
 .book-sub{margin:14px 0 0;font:italic 400 clamp(22px,2vw,27px)/1.3 var(--serif);color:var(--amber)}
-.book-copy p.body{margin:26px 0 0;max-width:560px;font-size:18px;line-height:1.7;color:var(--stone-3)}
+.book-copy p.body{margin:26px 0 0;max-width:580px;font:400 21px/1.65 var(--serif);color:var(--stone-3)}
 .pull{margin:34px 0 0;font:italic 400 clamp(25px,2.5vw,32px)/1.3 var(--serif);color:var(--white)}
 .endorse{position:relative;margin-top:clamp(64px,8vw,104px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
 .endorse figure{margin:0;padding:32px;border-top:1px solid var(--amber);background:rgba(246,243,234,.05)}
@@ -166,19 +213,19 @@ section{padding-block:clamp(72px,9vw,130px)}
 .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 36px;margin-top:34px}
 .roles>div{padding:18px 0;border-top:1px solid var(--rule)}
 .roles .r{font:500 21px var(--serif);color:var(--ink)}
-.roles .d{font-size:14px;line-height:1.55;color:var(--muted);margin-top:4px}
+.roles .d{font-size:16px;line-height:1.55;color:var(--muted);margin-top:4px}
 
 /* newsletter */
 .join .wrap{position:relative;display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px);align-items:flex-end}
 .join .copy{flex:1 1 480px;min-width:0}
-.join .copy p{margin:24px 0 0;max-width:520px;font-size:17px;line-height:1.65;color:var(--stone-3)}
+.join .copy p{margin:24px 0 0;max-width:540px;font-size:19px;line-height:1.65;color:var(--stone-3)}
 .signup{flex:1 1 420px;min-width:0;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end}
 .field{display:flex;flex-direction:column;gap:6px;flex:1 1 200px;min-width:0}
-.field label{font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2)}
+.field label{font:600 12.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2)}
 .field input{height:48px;width:100%;background:transparent;border:0;border-bottom:1px solid rgba(246,243,234,.55);color:var(--white);font:400 17px var(--sans);padding:0 2px;border-radius:0}
 .field input::placeholder{color:var(--stone)}
 .field input:focus{outline:none;border-bottom-color:var(--amber)}
-.signup .fine{flex-basis:100%;margin:0;font-size:12px;color:var(--stone)}
+.signup .fine{flex-basis:100%;margin:0;font-size:14px;color:var(--stone)}
 .signup .done{flex-basis:100%;margin:0;font:italic 400 22px var(--serif);color:var(--amber)}
 .light-form .field label{color:var(--muted)}
 .light-form .field input{color:var(--text);border-bottom-color:var(--ink)}
@@ -189,7 +236,7 @@ section{padding-block:clamp(72px,9vw,130px)}
 .foot{background:var(--ink);color:var(--white);padding-block:72px 40px}
 .foot-grid{display:flex;flex-wrap:wrap;gap:48px;justify-content:space-between}
 .foot nav{display:grid;grid-template-columns:repeat(2,minmax(140px,1fr));gap:12px 48px}
-.foot a{color:var(--stone-3);text-decoration:none;font-size:14px}
+.foot a{color:var(--stone-3);text-decoration:none;font-size:16px}
 .foot a:hover{color:var(--amber)}
 .foot-base{margin-top:56px;padding-top:22px;border-top:1px solid var(--slate);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--stone)}
 
@@ -237,7 +284,7 @@ section{padding-block:clamp(72px,9vw,130px)}
 /* book page */
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0 28px;margin-top:34px}
 .facts div{padding:14px 0;border-top:1px solid var(--slate)}
-.facts dt{font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.facts dt{font:600 12.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
 .facts dd{margin:6px 0 0;font:400 20px var(--serif);color:var(--white)}
 .excerpt{background:var(--paper)}
 .excerpt-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--rule);padding:clamp(28px,6vw,70px);text-align:center;box-shadow:0 30px 60px rgba(10,22,27,.08)}
@@ -314,7 +361,7 @@ section{padding-block:clamp(72px,9vw,130px)}
 
 <div id="app" class="motion">
 
-<div class="announce"><div class="wrap"><strong>New memoir</strong><span><em class="serif" style="font-size:15px">A God Awful God</em> arrives December 8, 2026.</span><a href="#book" data-go="book">Read the opening scene free <span class="arrow">→</span></a></div></div>
+<div class="announce"><div class="wrap"><strong>New memoir</strong><span><em class="serif" style="font-size:15px">A God Awful God</em> arrives December 8, 2026.</span><a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene free <span class="arrow">→</span></a></div></div>
 
 <header class="site-head">
   <div class="wrap head-in">
@@ -323,11 +370,11 @@ section{padding-block:clamp(72px,9vw,130px)}
       <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.5" fill="none"></path></svg>
     </button>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a class="nl" href="#essays" data-go="essays">Essays</a>
-      <a class="nl" href="#book" data-go="book">The Book</a>
       <a class="nl" href="#about" data-go="about">About</a>
-      <a class="nl" href="#photography" data-go="photography">Photography</a>
-      <a class="btn" href="#subscribe" data-go="home" data-anchor="join">Subscribe</a>
+      <a class="nl" href="#book" data-go="book">The Book</a>
+      <a class="nl" href="#essays" data-go="essays">Writing</a>
+      <a class="nl" href="#speaking" data-go="about" data-anchor="speaking">Speaking</a>
+      <a class="btn" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Subscribe</a>
     </nav>
   </div>
 </header>
@@ -337,25 +384,22 @@ section{padding-block:clamp(72px,9vw,130px)}
 <!-- ================= HOME ================= -->
 <div class="page" id="page-home" data-page="home">
 
-<section class="hero">
+<section class="hero-night on-dark">
+  <div class="daybreak dawn" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy lift">
-      <p class="eyebrow rise">Writer · Author · Former Pastor</p>
+      <p class="eyebrow rise">Faith, fear, and finding a kinder God</p>
       <h1 class="h-huge rise d1">The God I feared wasn’t the God I <em>found.</em></h1>
       <p class="lead rise d2">After nearly forty years in the pulpit, Randall Hartman writes honestly about faith, fear, doubt, and the people churches taught us to keep at a distance.</p>
       <div class="btn-row rise d3">
-        <a class="btn btn-orange" href="#book" data-go="book">Get the free excerpt <span class="arrow">→</span></a>
-        <a class="btn btn-line" href="#essays" data-go="essays">Read the essays <span class="arrow">→</span></a>
+        <a class="btn btn-orange" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Get the free excerpt <span class="arrow">→</span></a>
+        <a class="btn btn-line-dark" href="#essays" data-go="essays">Read the writing <span class="arrow">→</span></a>
       </div>
     </div>
-    <div class="portrait rise d2">
-      <div class="back" aria-hidden="true"><img class="par" src="assets/collage_panel.jpg" alt=""></div>
-      <div class="mat">
-        <div class="frameline" aria-hidden="true"></div>
-        <div class="photo"><img class="parp" src="assets/portrait_hero.jpg" alt="Randall Hartman, smiling, in a brown corduroy jacket and blue bow tie"></div>
-      </div>
-      <div class="namecard"><div class="n">Randall Hartman</div><div class="r">Writer · Ordained elder</div></div>
-    </div>
+    <figure class="pframe rise d2" style="margin-top:0;margin-bottom:0">
+      <div class="ph2"><img class="parp" src="assets/portrait_hero.jpg" alt="Randall Hartman, smiling, in a brown corduroy jacket and blue bow tie"></div>
+      <figcaption>Randall Hartman<span>Pastor for forty years · still asking questions</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -367,12 +411,30 @@ section{padding-block:clamp(72px,9vw,130px)}
   </div>
 </div>
 
+<section class="strike-sec on-dark" aria-labelledby="strikeH">
+  <div class="wrap">
+    <p class="eyebrow rv" id="strikeH" style="color:var(--orange)">What I was taught</p>
+    <ul class="lines">
+      <li>God is angry.</li>
+      <li>God is watching.</li>
+      <li>God is keeping score.</li>
+      <li class="final">God is love.</li>
+    </ul>
+    <div class="strike-note">
+      <div class="lbl">From Randall</div>
+      <div class="txt rv">
+        <p>I spent forty years explaining God from behind a pulpit. For most of them I was afraid of Him. This is where I write about what changed, and about the people my church taught me to fear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="band-dark on-dark" aria-labelledby="bookH">
   <img class="band-bg par" src="assets/collage_rays.jpg" alt="" aria-hidden="true" style="opacity:.6;object-position:50% 0">
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,11,14,.9) 25%,rgba(3,11,14,.45)),linear-gradient(0deg,var(--night) 8%,transparent 45%)"></div>
   <svg class="bolt" viewBox="0 0 120 600" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M70 0 L52 150 L78 160 L40 330 L66 338 L30 600" fill="none" stroke="#F5CA4B" stroke-width="1.5"></path></svg>
   <div class="wrap book-grid">
-    <div class="cover-col"><a href="#book" data-go="book"><img class="tilt" src="assets/cover.jpg" alt="Cover of A God Awful God: The God I Feared Wasn’t the God I Found, a memoir by Randall Hartman"></a></div>
+    <div class="cover-col"><a class="cover-soon tilt" href="#book" data-go="book" aria-label="A God Awful God: cover coming soon"><span><span class="cs-t" style="display:block">A God<br>Awful God</span><span class="cs-s" style="display:block">The God I Feared Wasn’t the God I Found</span></span><span class="cs-badge">Cover coming soon</span><span><span class="cs-b" style="display:block">Randall Hartman</span><span class="cs-note" style="display:block">Subscribers see it first</span></span></a></div>
     <div class="book-copy">
       <p class="eyebrow rv">The new memoir · December 8, 2026</p>
       <h2 class="book-title rv" id="bookH">A God Awful God</h2>
@@ -380,14 +442,14 @@ section{padding-block:clamp(72px,9vw,130px)}
       <p class="body rv">It began with a picture in the family Bible: God standing on the clouds, lightning shooting from His eyes. <em>A God Awful God</em> is the story of how that picture changed, and what happened when the change began rearranging the way Randall saw other people.</p>
       <blockquote class="pull rv2">“The lightning had not stayed inside the picture. We had learned to aim it at people.”</blockquote>
       <div class="btn-row rv2">
-        <a class="btn btn-orange" href="#book" data-go="book">Read the opening scene free <span class="arrow">→</span></a>
+        <a class="btn btn-orange" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene free <span class="arrow">→</span></a>
         <a class="btn btn-line-dark" href="#book" data-go="book">About the book <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
   <div class="wrap endorse">
-    <figure class="rv"><blockquote>“[Endorsement from Thomas Jay Oord. Paste the exact approved wording here.]”</blockquote><figcaption>Thomas Jay Oord <span>· [credential]</span></figcaption></figure>
-    <figure class="rv2"><blockquote>“[Endorsement from David P. Gushee. Paste the exact approved wording here.]”</blockquote><figcaption>David P. Gushee <span>· [credential]</span></figcaption></figure>
+    <figure class="rv"><blockquote>“[One-line endorsement from Thomas Jay Oord, the line chosen for the cover.]”</blockquote><figcaption>Thomas Jay Oord <span>· [credential]</span></figcaption></figure>
+    <figure class="rv2"><blockquote>“[One-line endorsement from David P. Gushee.]”</blockquote><figcaption>David P. Gushee <span>· [credential]</span></figcaption></figure>
   </div>
 </section>
 
@@ -415,15 +477,15 @@ section{padding-block:clamp(72px,9vw,130px)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow rv">Latest writing</p><h2 class="h-xl rv" id="writeH">Notes from the long way home</h2></div>
-      <a class="textlink rv" href="#essays" data-go="essays">All essays <span class="arrow">→</span></a>
+      <a class="textlink rv" href="#essays" data-go="essays">All writing <span class="arrow">→</span></a>
     </div>
     <a class="feature rv" href="#essay" data-go="essay">
       <div class="img"><img src="assets/lightning.jpg" alt=""></div>
       <div class="txt">
-        <p class="meta" style="color:var(--rust);margin:0">Featured essay · Oct 15, 2026 · 4 min read</p>
+        <p class="meta" style="color:var(--rust);margin:0">Featured · Oct 15, 2026 · 4 min read</p>
         <h3>When We Aim God’s Lightning Toward Other People</h3>
         <p>What if the God you were taught to fear is still shaping the way you see other people?</p>
-        <span class="textlink" style="align-self:flex-start;margin-top:22px">Read the essay <span class="arrow">→</span></span>
+        <span class="textlink" style="align-self:flex-start;margin-top:22px">Read it <span class="arrow">→</span></span>
       </div>
     </a>
     <div id="homeRows"></div>
@@ -434,8 +496,8 @@ section{padding-block:clamp(72px,9vw,130px)}
   <div class="wrap two" style="align-items:flex-start">
     <div class="about-photo rv" style="flex:1 1 340px;max-width:460px">
       <figure>
-        <a class="frame" href="#photography" data-go="photography" style="display:block"><img class="parp" src="assets/photo_tree.jpg" alt="A bare tree in winter fog, black and white photograph by Randall Hartman"></a>
-        <figcaption><span class="serif" style="font-style:italic;font-size:17px;color:var(--muted)">Photograph by Randall Hartman</span><a class="textlink" href="#photography" data-go="photography">See the photographs <span class="arrow">→</span></a></figcaption>
+        <div class="frame"><img class="parp" src="assets/photo_tree.jpg" alt="A bare tree in winter fog, black and white photograph by Randall Hartman"></div>
+        <figcaption><span class="serif" style="font-style:italic;font-size:18px;color:var(--muted)">Photograph by Randall Hartman</span></figcaption>
       </figure>
     </div>
     <div>
@@ -443,12 +505,25 @@ section{padding-block:clamp(72px,9vw,130px)}
       <h2 class="h-xl rv" id="aboutH">A pastor who kept asking questions</h2>
       <p class="lead rv" style="margin:24px 0 0">Randall Hartman served nearly forty years as a lead pastor in Indiana, Ohio, and Michigan, then seven more as an interim pastor helping churches through transition from Oregon to Alaska. He has written for HuffPost, The Good Men Project, and Sixty and Me, and is still an ordained elder in the Church of the Nazarene.</p>
       <div class="roles rv2">
-        <div><div class="r">Writer</div><div class="d">Weekly essays on faith, fear, and belonging.</div></div>
-        <div><div class="r">Author</div><div class="d"><em>Tom’s List</em> (2016) and <em>A God Awful God</em> (2026).</div></div>
+        <div><div class="r">Writer</div><div class="d">Weekly writing on faith, fear, and belonging.</div></div>
+        <div><div class="r">Author</div><div class="d"><em>A God Awful God</em>, December 8, 2026.</div></div>
         <div><div class="r">Pastor</div><div class="d">Lead and interim pastor for nearly five decades.</div></div>
-        <div><div class="r">Photographer</div><div class="d">“One of the great joys of my life.”</div></div>
+        <div><div class="r">Speaker</div><div class="d">Churches, retreats, classes, and podcasts.</div></div>
       </div>
-      <div class="btn-row rv2"><a class="btn btn-line" href="#about" data-go="about">Full story <span class="arrow">→</span></a></div>
+      <div class="btn-row rv2"><a class="btn btn-line" href="#about" data-go="about">Full story <span class="arrow">→</span></a><a class="btn btn-line" href="#speaking" data-go="about" data-anchor="speaking">Invite Randall to speak <span class="arrow">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="speak" aria-labelledby="speakHomeH">
+  <div class="wrap two" style="align-items:center">
+    <div>
+      <p class="eyebrow rv">Speaking</p>
+      <h2 class="h-xl rv" id="speakHomeH">Invite Randall to <em>speak</em></h2>
+    </div>
+    <div>
+      <p class="lead rv" style="margin:0">Churches, retreats, classes, and podcasts: conversations about fear, faith, and the questions people were told not to ask.</p>
+      <div class="btn-row rv2"><a class="btn btn-line" href="#speaking" data-go="about" data-anchor="speaking">Speaking topics <span class="arrow">→</span></a></div>
     </div>
   </div>
 </section>
@@ -459,14 +534,14 @@ section{padding-block:clamp(72px,9vw,130px)}
   <div class="wrap">
     <div class="copy">
       <p class="eyebrow rv">Join the conversation</p>
-      <h2 class="h-xl rv" id="joinH">New essays, honest questions, and the opening scene of <em>A God Awful God</em>, free.</h2>
-      <p class="rv2">An occasional letter from Randall: each new essay, behind-the-scenes notes on the book, and excerpts not shared anywhere else. Unsubscribe any time.</p>
+      <h2 class="h-xl rv" id="joinH">New writing, honest questions, and the opening scene of <em>A God Awful God</em>, free.</h2>
+      <p class="rv2">An occasional letter from Randall: each new piece of writing, behind-the-scenes notes on the book, and excerpts not shared anywhere else. Unsubscribe any time.</p>
     </div>
     <form class="signup rv2" data-signup>
       <div class="field"><label for="fn1">First name</label><input id="fn1" type="text" autocomplete="given-name"></div>
       <div class="field"><label for="em1">Email address</label><input id="em1" type="email" autocomplete="email" placeholder="you@example.com" required></div>
       <button type="submit" class="btn btn-orange">Send me the excerpt <span class="arrow">→</span></button>
-      <p class="fine">On the live site this form connects to MailerLite. Your email is never shared.</p>
+      <p class="fine">On the live site this is Randall’s MailerLite form. Your email is never shared. <a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener" style="color:var(--amber)">Open the signup page</a></p>
     </form>
   </div>
 </section>
@@ -475,18 +550,18 @@ section{padding-block:clamp(72px,9vw,130px)}
 <!-- ================= ESSAYS ================= -->
 <div class="page" id="page-essays" data-page="essays" hidden>
   <div class="wrap page-head">
-    <p class="eyebrow rise">Essays</p>
+    <p class="eyebrow rise">Writing</p>
     <h1 class="h-huge rise d1">Writing from the <em>long way home</em></h1>
-    <p class="lead rise d2" style="max-width:620px;margin:24px 0 0">Weekly essays on faith, fear, doubt, and belonging, written by a pastor who changed his mind about some of the things he used to preach.</p>
+    <p class="lead rise d2" style="max-width:620px;margin:24px 0 0">Weekly writing on faith, fear, doubt, and belonging, from a pastor who changed his mind about some of the things he used to preach.</p>
     <form class="search light-form rise d3" role="search" data-search>
       <div class="field"><label for="q">Search the archive</label><input id="q" type="search" placeholder="Fear, doubt, belonging…"></div>
       <button type="submit" aria-label="Search">→</button>
     </form>
   </div>
   <div class="wrap" style="padding-bottom:clamp(72px,9vw,120px)">
-    <div class="filters" id="filters" aria-label="Filter essays by topic"></div>
+    <div class="filters" id="filters" aria-label="Filter writing by topic"></div>
     <div id="archiveRows"></div>
-    <div class="pager" aria-label="Pages"><span class="cur">1</span><span>2</span><span>3</span><span style="border:0">…</span><span>55</span><a class="textlink" href="#essays" style="margin-left:12px" onclick="return false">Older essays <span class="arrow">→</span></a></div>
+    <div class="pager" aria-label="Pages"><span class="cur">1</span><span>2</span><span>3</span><span style="border:0">…</span><span>55</span><a class="textlink" href="#essays" style="margin-left:12px" onclick="return false">Older writing <span class="arrow">→</span></a></div>
   </div>
 </div>
 
@@ -495,7 +570,7 @@ section{padding-block:clamp(72px,9vw,130px)}
   <div class="progress" aria-hidden="true"><span></span></div>
   <article>
     <header class="measure essay-head">
-      <p class="eyebrow rise" style="justify-content:center">Essay · Belonging</p>
+      <p class="eyebrow rise" style="justify-content:center">Writing · Belonging</p>
       <h1 class="rise d1">When We Aim God’s Lightning Toward Other People</h1>
       <p class="meta rise d2">Randall Hartman · October 15, 2026 · 4 min read</p>
     </header>
@@ -523,7 +598,7 @@ section{padding-block:clamp(72px,9vw,130px)}
     <div class="measure">
       <div class="tags"><a class="tag" href="#essays" data-go="essays">Image of God</a><a class="tag" href="#essays" data-go="essays">Belonging</a><a class="tag" href="#book" data-go="book">A God Awful God</a></div>
       <aside class="endbox rv">
-        <p class="eyebrow" style="margin:0">If this essay stayed with you</p>
+        <p class="eyebrow" style="margin:0">If this stayed with you</p>
         <h2>Get the next one in your inbox, plus the opening scene of <em>A God Awful God</em>.</h2>
         <form class="signup light-form" data-signup style="margin-top:20px">
           <div class="field"><label for="em2">Email address</label><input id="em2" type="email" autocomplete="email" required></div>
@@ -545,7 +620,7 @@ section{padding-block:clamp(72px,9vw,130px)}
     <img class="band-bg par" src="assets/collage_rays.jpg" alt="" aria-hidden="true" style="opacity:.55;object-position:50% 0">
     <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,11,14,.4),rgba(3,11,14,.9) 60%),linear-gradient(0deg,var(--night) 6%,transparent 40%)"></div>
     <div class="wrap book-grid">
-      <div class="cover-col rise"><img src="assets/cover.jpg" alt="Cover of A God Awful God by Randall Hartman" style="transform:perspective(1200px) rotateY(8deg)"></div>
+      <div class="cover-col rise"><div class="cover-soon" style="transform:perspective(1200px) rotateY(8deg)" role="img" aria-label="A God Awful God: cover coming soon"><span><span class="cs-t" style="display:block">A God<br>Awful God</span><span class="cs-s" style="display:block">The God I Feared Wasn’t the God I Found</span></span><span class="cs-badge">Cover coming soon</span><span><span class="cs-b" style="display:block">Randall Hartman</span><span class="cs-note" style="display:block">Subscribers see it first</span></span></div></div>
       <div class="book-copy">
         <p class="eyebrow rise">A memoir · December 8, 2026</p>
         <h1 class="book-title rise d1">A God Awful God</h1>
@@ -558,7 +633,7 @@ section{padding-block:clamp(72px,9vw,130px)}
         <dl class="facts rise d3">
           <div><dt>Publisher</dt><dd>Seven Lanterns Press</dd></div>
           <div><dt>Release</dt><dd>December 8, 2026</dd></div>
-          <div><dt>Format</dt><dd>[Hardcover · eBook · Audio]</dd></div>
+          <div><dt>Formats</dt><dd>Kindle · Paperback · Hardback</dd></div>
         </dl>
       </div>
     </div>
@@ -582,8 +657,9 @@ section{padding-block:clamp(72px,9vw,130px)}
     <div class="wrap">
       <p class="eyebrow rv">What readers are saying</p>
       <div class="endorse" style="margin-top:24px">
-        <figure class="rv"><blockquote>“[Endorsement from Thomas Jay Oord.]”</blockquote><figcaption>Thomas Jay Oord <span>· [credential]</span></figcaption></figure>
-        <figure class="rv2"><blockquote>“[Endorsement from David P. Gushee.]”</blockquote><figcaption>David P. Gushee <span>· [credential]</span></figcaption></figure>
+        <figure class="rv"><blockquote>“[Full endorsement from Thomas Jay Oord goes here, exactly as approved. This space is sized for the complete text, two or three sentences, the same version that appears on the endorsement page inside the book.]”</blockquote><figcaption>Thomas Jay Oord <span>· [credential]</span></figcaption></figure>
+        <figure class="rv2"><blockquote>“[Full endorsement from David P. Gushee goes here, exactly as approved. This space is sized for the complete text, two or three sentences, the same version that appears on the endorsement page inside the book.]”</blockquote><figcaption>David P. Gushee <span>· [credential]</span></figcaption></figure>
+        <figure class="rv3"><blockquote>“[Room for a third endorsement if one arrives before launch.]”</blockquote><figcaption>[Name] <span>· [credential]</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -591,15 +667,14 @@ section{padding-block:clamp(72px,9vw,130px)}
     <div class="wrap two" style="align-items:center">
       <div>
         <p class="eyebrow rv">Pre-order</p>
-        <h2 class="h-xl rv">Order from your favorite bookseller</h2>
-        <p class="lead rv" style="margin:20px 0 0">Pre-orders in the first weeks help a book find readers. If you can, ask your local library to carry it too.</p>
+        <h2 class="h-xl rv">Reserve your copy</h2>
+        <p class="lead rv" style="margin:20px 0 0">The Kindle edition can be pre-ordered now. Paperback and hardback arrive on launch day, December 8.</p>
       </div>
       <div class="retail rv2">
-        <a class="btn btn-line" href="#retailers" onclick="return false">Bookshop.org <span class="arrow">↗</span></a>
-        <a class="btn btn-line" href="#retailers" onclick="return false">Barnes &amp; Noble <span class="arrow">↗</span></a>
-        <a class="btn btn-line" href="#retailers" onclick="return false">Amazon <span class="arrow">↗</span></a>
-        <a class="btn btn-line" href="#retailers" onclick="return false">Seven Lanterns Press <span class="arrow">↗</span></a>
-        <p class="meta" style="flex-basis:100%;margin:6px 0 0"><span class="ph">Links to come</span></p>
+        <a class="btn btn-orange" href="#retailers" onclick="return false">Pre-order on Kindle <span class="arrow">↗</span></a>
+        <a class="btn btn-line" href="#retailers" onclick="return false">Paperback <span class="arrow">↗</span></a>
+        <a class="btn btn-line" href="#retailers" onclick="return false">Hardback <span class="arrow">↗</span></a>
+        <p class="meta" style="flex-basis:100%;margin:6px 0 0"><span class="ph">Placeholder links</span> They go live once pre-orders open.</p>
       </div>
     </div>
   </section>
@@ -612,7 +687,7 @@ section{padding-block:clamp(72px,9vw,130px)}
       <div class="hero-copy">
         <p class="eyebrow rise">About</p>
         <h1 class="h-huge rise d1">A pastor who kept <em>asking questions</em></h1>
-        <p class="lead rise d2">Randall Hartman spent nearly five decades in ministry. These days he writes, photographs, and keeps asking the questions he was once told not to ask.</p>
+        <p class="lead rise d2">Randall Hartman spent nearly five decades in ministry. These days he writes, speaks, and keeps asking the questions he was once told not to ask.</p>
       </div>
       <div class="portrait rise d2" style="max-width:420px">
         <div class="back" aria-hidden="true"><img class="par" src="assets/collage_panel.jpg" alt=""></div>
@@ -626,7 +701,7 @@ section{padding-block:clamp(72px,9vw,130px)}
         <p class="eyebrow rv">The long version</p>
         <div class="note rv" style="margin-top:0">
           <p>Randall served nearly forty years as a lead pastor in churches in Indiana, Ohio, and Michigan. Toward the end of his ministry he spent seven years as a professional interim pastor, helping people and churches in transition in Oregon, Arizona, Idaho, Indiana, New Jersey, Alaska, and Ohio.</p>
-          <p>He has been a contributing writer for HuffPost and The Good Men Project, and a featured contributor at Sixty and Me. His first book, <em>Tom’s List: 50 Commandments to Transform Your Life</em>, came out in 2016.</p>
+          <p>He has been a contributing writer for HuffPost and The Good Men Project, and a featured contributor at Sixty and Me.</p>
           <p>In 2021 he was put on a church trial for “teaching doctrine contrary to the Church of the Nazarene,” after writing about changing his mind on the full inclusion of LGBTQ+ people. The trial did not reach a guilty verdict, and <span class="hl">he is still an ordained elder</span>.</p>
           <p>He has been married for 51 years. They have a son and a daughter, both married, and seven grandchildren.</p>
         </div>
@@ -638,54 +713,42 @@ section{padding-block:clamp(72px,9vw,130px)}
           <li class="rv"><span class="yr">Schooling</span><span class="what">B.S., Olivet Nazarene University · M.Div. <em>cum laude</em>, Nazarene Theological Seminary · D.Min., Grace Theological Seminary</span></li>
           <li class="rv"><span class="yr">~40 yrs</span><span class="what">Lead pastor in Indiana, Ohio, and Michigan</span></li>
           <li class="rv"><span class="yr">7 yrs</span><span class="what">Interim pastor in seven states, from Oregon to Alaska</span></li>
-          <li class="rv"><span class="yr">2016</span><span class="what"><em>Tom’s List: 50 Commandments to Transform Your Life</em></span></li>
-          <li class="rv"><span class="yr">2021</span><span class="what">Church trial; no guilty verdict</span></li>
+                    <li class="rv"><span class="yr">2021</span><span class="what">Church trial; no guilty verdict</span></li>
           <li class="rv"><span class="yr">2026</span><span class="what"><em>A God Awful God</em>, Seven Lanterns Press</span></li>
         </ol>
       </div>
     </div>
   </section>
-  <section>
-    <div class="wrap two" style="align-items:center">
-      <div class="about-photo rv" style="max-width:420px"><figure><a class="frame" href="#photography" data-go="photography" style="display:block"><img class="parp" src="assets/photo_tree.jpg" alt="A bare tree in winter fog, black and white photograph by Randall Hartman"></a></figure></div>
+  <section class="speak" id="speaking" aria-labelledby="speakH">
+    <div class="wrap two">
       <div>
-        <p class="eyebrow rv">Behind the camera</p>
-        <h2 class="h-xl rv">Photography is “one of the great joys of my life.”</h2>
-        <div class="btn-row rv2"><a class="btn btn-line" href="#photography" data-go="photography">See the photographs <span class="arrow">→</span></a><a class="btn btn-orange" href="#subscribe" data-go="home" data-anchor="join">Get in touch <span class="arrow">→</span></a></div>
+        <p class="eyebrow rv">Speaking</p>
+        <h2 class="h-xl rv" id="speakH">Bring the conversation to your <em>community</em></h2>
+        <p class="lead rv" style="margin:22px 0 0">Randall speaks with churches, retreats, classes, and podcasts about fear, faith, and the questions people were told not to ask.</p>
+        <div class="venues rv2"><span>Churches</span><span>Retreats</span><span>Book groups</span><span>Classes</span><span>Podcasts</span></div>
+        <div class="btn-row rv2"><a class="btn btn-orange" href="#speaking" onclick="return false">Invite Randall <span class="arrow">→</span></a></div>
+        <p class="meta" style="margin-top:14px"><span class="ph">Draft</span> Topics and contact details to confirm with Randall.</p>
+      </div>
+      <div>
+        <ul class="topics">
+          <li class="rv"><div class="tt">When God had lightning eyes</div><div class="td">How a frightening picture of God shapes us, and how it can change.</div></li>
+          <li class="rv"><div class="tt">Permission to ask</div><div class="td">Why honest questions are a way into faith, not out of it.</div></li>
+          <li class="rv"><div class="tt">Who belongs?</div><div class="td">What happens when your picture of God changes the way you see your neighbor.</div></li>
+        </ul>
       </div>
     </div>
   </section>
-</div>
-
-<!-- ================= PHOTOGRAPHY ================= -->
-<div class="page" id="page-photography" data-page="photography" hidden>
-  <div class="wrap page-head">
-    <p class="eyebrow rise">Photography</p>
-    <h1 class="h-huge rise d1">Seeing <em>slowly</em></h1>
-    <p class="lead rise d2" style="max-width:620px;margin:24px 0 0">Randall has been photographing for decades. These are a few of his favorites.</p>
-  </div>
-  <div class="wrap" style="padding-bottom:clamp(72px,9vw,120px)">
-    <div class="gallery">
-      <button type="button" class="g g1 real rv" data-lightbox="assets/photo_tree.jpg" data-caption="Bare tree in winter fog" aria-label="Open photo: bare tree in winter fog"><img class="parp" src="assets/photo_tree.jpg" alt="A bare tree in winter fog, black and white"></button>
-      <div class="g g2 rv2">Photo from Randall’s archive</div>
-      <div class="g g3 rv3">Photo from Randall’s archive</div>
-      <div class="g g4 rv">Photo</div>
-      <div class="g g5 rv2">Photo</div>
-      <div class="g g6 rv3">Photo</div>
-    </div>
-    <p class="meta" style="margin-top:18px"><span class="ph">More photos to come</span> Existing gallery URLs stay the same in the rebuild.</p>
-  </div>
 </div>
 
 </main>
 
 <footer class="foot">
   <div class="wrap foot-grid">
-    <div><div class="serif" style="font-size:40px;letter-spacing:-.01em">Randall Hartman</div><div style="margin-top:6px;font-size:14px;color:var(--stone-2)">Writer · Author · Former Pastor · Photographer</div></div>
+    <div><div class="serif" style="font-size:40px;letter-spacing:-.01em">Randall Hartman</div><div style="margin-top:6px;font-size:14px;color:var(--stone-2)">Writer · Author · Speaker</div></div>
     <nav aria-label="Footer">
-      <a href="#essays" data-go="essays">Essays</a><a href="#book" data-go="book">A God Awful God</a>
-      <a href="#about" data-go="about">About</a><a href="#photography" data-go="photography">Photography</a>
-      <a href="#subscribe" data-go="home" data-anchor="join">Newsletter</a><a href="#about" data-go="about">Contact</a>
+      <a href="#about" data-go="about">About</a><a href="#book" data-go="book">A God Awful God</a>
+      <a href="#essays" data-go="essays">Writing</a><a href="#speaking" data-go="about" data-anchor="speaking">Speaking</a>
+      <a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Subscribe</a><a href="#about" data-go="about">Contact</a>
     </nav>
   </div>
   <div class="wrap foot-base"><span>© 2026 Randall Hartman</span><span>randallhartman.com</span></div>
@@ -723,7 +786,7 @@ section{padding-block:clamp(72px,9vw,130px)}
   function renderArchive(){
     fWrap.innerHTML=topics.map(t=>`<button type="button" class="filter" aria-pressed="${t===topic}" data-topic="${t}">${t}</button>`).join('');
     const list=ESSAYS.filter(e=>(topic==='All'||e.topic===topic)&&(!q||(e.title+' '+e.ex).toLowerCase().includes(q)));
-    aRows.innerHTML=list.length?list.map(rowHTML).join(''):`<p class="lead">No essays match “${esc(q)}” yet. Try fear, doubt, or belonging.</p>`;
+    aRows.innerHTML=list.length?list.map(rowHTML).join(''):`<p class="lead">Nothing matches “${esc(q)}” yet. Try fear, doubt, or belonging.</p>`;
   }
   fWrap.addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(!b)return;topic=b.dataset.topic;renderArchive();});
   document.querySelector('[data-search]').addEventListener('submit',e=>{e.preventDefault();q=document.getElementById('q').value.trim().toLowerCase();renderArchive();});
@@ -731,7 +794,7 @@ section{padding-block:clamp(72px,9vw,130px)}
 
   // start where you are
   const DOORS=[
-    {label:'I was taught to be afraid of God',lead:'Fear is a hard place to meet God. These essays start there, honestly.',links:[2,3]},
+    {label:'I was taught to be afraid of God',lead:'Fear is a hard place to meet God. These pieces start there, honestly.',links:[2,3]},
     {label:'My questions aren’t welcome at church',lead:'Your questions are not a threat to faith. Sometimes they are the way in.',links:[1,4]},
     {label:'I’m rethinking who belongs',lead:'What happens when your picture of God changes the way you see your neighbor.',links:[0,5]},
     {label:'I want the whole story',lead:'A memoir of fear, a church trial, and finding a God worth trusting.',book:true}
@@ -741,7 +804,7 @@ section{padding-block:clamp(72px,9vw,130px)}
   function renderDoors(anim){
     dWrap.innerHTML=DOORS.map((d,i)=>`<button type="button" role="tab" class="door" id="door${i}" aria-selected="${i===door}" aria-controls="doorPanel" data-door="${i}"><span>${esc(d.label)}</span><span class="num">${i+1}</span></button>`).join('');
     const d=DOORS[door];
-    const chips=d.book?`<a class="chip" href="#book" data-go="book">Read the opening scene free</a><a class="chip" href="#about" data-go="about">Randall’s story</a>`:d.links.map(i=>`<a class="chip" href="#essay" data-go="essay">${esc(ESSAYS[i].title)}</a>`).join('');
+    const chips=d.book?`<a class="chip" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene free</a><a class="chip" href="#about" data-go="about">Randall’s story</a>`:d.links.map(i=>`<a class="chip" href="#essay" data-go="essay">${esc(ESSAYS[i].title)}</a>`).join('');
     dPanel.setAttribute('aria-labelledby','door'+door);
     dPanel.innerHTML=`<p>${esc(d.lead)}</p><div class="chips">${chips}</div>`;
     if(anim){dPanel.classList.remove('swap');void dPanel.offsetWidth;dPanel.classList.add('swap');}
@@ -750,8 +813,8 @@ section{padding-block:clamp(72px,9vw,130px)}
   renderDoors(false);
 
   // routing
-  const PAGES=['home','essays','essay','book','about','photography'];
-  const ALIAS={subscribe:['home','join'],excerpt:['book','excerpt'],retailers:['book','retailers']};
+  const PAGES=['home','essays','essay','book','about'];
+  const ALIAS={subscribe:['home','join'],excerpt:['book','excerpt'],retailers:['book','retailers'],speaking:['about','speaking']};
   const nav=document.getElementById('nav'), menuBtn=document.getElementById('menuBtn');
   function show(page,anchor,fromLoad){
     if(!PAGES.includes(page))page='home';
