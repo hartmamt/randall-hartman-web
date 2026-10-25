@@ -17,3 +17,10 @@ Open items: Oord/Gushee endorsement wording and credentials, retailer links, sig
 - **C · Questions Welcome** (edgier): https://claude.ai/artifact/3NM87XUbmNKpucgUdzfoNy. Riso/xerox zine: Archivo variable width stretched by scroll, strike-through manifesto, cursor-preview essay index, sticky stacked cards, halftone portrait made from Randall's real photo, CSS `@property` read-percentage counter.
 - **D · Sunbeam** (designed by a fluffy tabby): https://claude.ai/artifact/JVLsoWWG5S9dqMC7gopjYX. Warm cream and ginger, Fraunces SOFT/WONK, gpt-image gouache cats (napping on the cover, peeking over the newsletter, paw dangling from the top), yarn thread that unspools with scroll, paw-print cursor trail, scroll-swept sunbeams, “Nap mode” animation toggle. Source in `prototype-d-tabby/`.
 Shared images live in `assets/`; each prototype folder holds only its own extra textures.
+
+## Version E (Oct 25)
+https://claude.ai/artifact/CM4PvsXsAsX3y7RSLwNSV7 · source in `prototype-e/`. Builds on A, made to look less generated and less like brianmclaren.net, using the taste-skill (Leonxlnx/taste-skill) as design guidance.
+- Imagery is only Randall's own photos, all in one black-and-white treatment: the white-glasses portrait (from his site, 2022/10/IMG_0965), the fog tree, and the Queen Anne's lace shot (2021/05/2driedup, cropped to remove the signature that has the middle initial). The generated collages, desk and lightning images are gone.
+- Type: EB Garamond plus Archivo condensed (replaces Inter). Archivo carries the name, dates and struck lines (Version C's boldness, used in a few places).
+- Colours: fog ground (a tint of the cover's pale strokes), night and storm bands, doorway gold as one full field (Speaking), path orange only on buttons and strike marks. No italic accent words, eyebrows, glass header or gradients.
+- "Show WordPress blocks" in the bottom ribbon labels each section with the block pattern / template it becomes.
