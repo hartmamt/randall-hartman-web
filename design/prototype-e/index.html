@@ -102,7 +102,8 @@ section{padding-block:clamp(80px,10vw,150px)}
 .lines button span{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:.14em;text-decoration-skip-ink:none;transition:text-decoration-color .5s ease,color .5s ease}
 .lines button[aria-pressed="false"]{color:var(--on-dark)}
 .lines button[aria-pressed="false"] span{text-decoration-color:transparent}
-.lines li.final{margin-top:.2em;color:var(--gold);font:italic 400 clamp(64px,11vw,184px)/1 var(--serif);letter-spacing:-.02em}
+.lines li.came{margin-top:clamp(40px,5vw,72px);font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);color:var(--on-dark-2)}
+.lines li.final{margin-top:.1em;color:var(--gold);font:italic 400 clamp(64px,11vw,184px)/1 var(--serif);letter-spacing:-.02em}
 .strike-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px clamp(32px,6vw,96px);margin-top:clamp(56px,7vw,96px);align-items:end}
 .strike-foot .statement{color:var(--on-dark)}
 .strike-foot .small{color:var(--on-dark-2)}
@@ -111,7 +112,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 @media (prefers-reduced-motion:reduce){.lines button span{transition:none}}
 
 /* book */
-.book{position:relative;overflow:hidden;background:var(--night);color:var(--on-dark)}
+.book{position:relative;overflow:hidden;background:var(--storm);color:var(--on-dark)}
 .rays{position:absolute;left:28%;top:50%;width:200vmax;height:200vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 0deg,rgba(246,185,14,.13) 0 6deg,transparent 6deg 15deg);border-radius:50%;-webkit-mask-image:radial-gradient(circle,#000 6%,transparent 52%);mask-image:radial-gradient(circle,#000 6%,transparent 52%);animation:spin 140s linear infinite;pointer-events:none}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 .tilt{perspective:1200px;--rx:0deg;--ry:-12deg}
@@ -121,7 +122,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .tilt .note{position:absolute;right:-14px;top:-18px;background:var(--gold);color:var(--night);font:900 26px/1 var(--grot);font-stretch:62%;text-transform:uppercase;padding:10px 14px;transform:rotate(8deg) translateZ(40px);box-shadow:3px 4px 0 rgba(0,0,0,.35)}
 @media (prefers-reduced-motion:reduce){.rays{animation:none}.tilt .c{transition:none}}
 .book-grid{position:relative;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(48px,7vw,112px);align-items:center}
-.soon{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:2/3;max-width:100%;background:var(--storm);padding:12% 10%;color:var(--on-dark);text-decoration:none}
+.soon{display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:2/3;max-width:100%;background:var(--night);padding:12% 10%;color:var(--on-dark);text-decoration:none}
 .soon .t{font:500 clamp(34px,3.6vw,52px)/1 var(--serif);letter-spacing:.01em}
 .soon .s{margin-top:14px;font:italic 400 clamp(18px,1.6vw,22px)/1.3 var(--serif);color:var(--gold)}
 .soon .c{font:800 15px/1.3 var(--grot);font-stretch:85%;color:var(--night);background:var(--gold);padding:10px 12px;align-self:flex-start}
@@ -129,7 +130,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .soon .n{margin-top:6px;font:500 14px/1.4 var(--grot);color:var(--on-dark-2)}
 .book .h2{color:var(--on-dark);font:500 clamp(54px,8vw,124px)/.86 var(--serif);letter-spacing:.01em;text-transform:uppercase}
 .book .h2 span{display:block}
-.endorse figure{background:var(--storm)}
+.endorse figure{background:var(--night)}
 .book .sub{margin-top:14px;font:italic 400 clamp(22px,2vw,28px)/1.3 var(--serif);color:var(--gold)}
 .book .when{margin-top:24px;font:700 17px/1.4 var(--grot);font-stretch:85%;color:var(--on-dark)}
 .book .body-serif{margin-top:20px;max-width:620px}
@@ -142,18 +143,29 @@ section{padding-block:clamp(80px,10vw,150px)}
 .book .more{color:var(--on-dark)}
 @media (max-width:860px){.book-grid{grid-template-columns:1fr}.book .cover-col{max-width:300px}}
 
-/* questions */
-.questions{background:var(--paper);padding:0}
-.q-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
-.q-photo{position:relative;min-height:520px;background:var(--fog);overflow:hidden;margin:0}
-.q-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.q-photo figcaption{position:absolute;left:0;bottom:0;background:var(--paper);padding:10px 16px 0 max(var(--gut-l),3.2vw);font:500 14px var(--grot);color:var(--text-2)}
-.q-copy{padding:clamp(72px,9vw,140px) max(var(--gut-r),3.2vw) clamp(72px,9vw,140px) clamp(32px,5vw,88px);min-width:0}
-.q-list{list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:28px}
-.q-list .q{font:400 clamp(25px,2.3vw,32px)/1.2 var(--serif)}
-.q-list .ans{display:flex;flex-direction:column;gap:2px;margin-top:10px}
+/* questions welcome: the signature section */
+.questions{background:var(--paper)}
+.q-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px clamp(32px,6vw,96px);align-items:end}
+.q-title{font:900 clamp(64px,9.6vw,156px)/.86 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
+.q-list{list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px clamp(32px,6vw,96px);counter-reset:q}
+.q-list li{counter-increment:q;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 20px;padding-top:24px;box-shadow:inset 0 3px 0 var(--night)}
+.q-list li::before{content:counter(q,decimal-leading-zero);grid-row:span 2;font:900 clamp(44px,4.4vw,64px)/.85 var(--grot);font-stretch:62%;color:var(--orange)}
+.q-list .q{font:500 clamp(26px,2.4vw,34px)/1.15 var(--serif)}
+.q-list .ans{display:flex;flex-direction:column;gap:2px;margin-top:12px}
 .q-list .ans a{font:500 17px/1.4 var(--grot);padding-block:6px;width:fit-content}
-@media (max-width:860px){.q-grid{grid-template-columns:1fr}.q-photo{min-height:0;aspect-ratio:4/5}.q-copy{padding-left:var(--gut-l);padding-right:var(--gut-r)}.q-photo figcaption{padding-left:var(--gut-l)}}
+@media (max-width:860px){.q-head,.q-list{grid-template-columns:1fr}}
+
+/* notebook quote: gold words beside Randall's photograph */
+.notebook{background:var(--night);color:var(--on-dark);padding:0}
+.nb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
+.nb-photo{position:relative;min-height:560px;margin:0;overflow:hidden;background:var(--storm)}
+.nb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.nb-photo figcaption{position:absolute;left:0;bottom:0;background:var(--night);color:var(--on-dark-2);padding:10px 16px 0 max(var(--gut-l),3.2vw);font:500 14px var(--grot)}
+.nb-copy{display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(72px,9vw,140px) max(var(--gut-r),3.2vw) clamp(72px,9vw,140px) clamp(32px,6vw,104px);min-width:0}
+.nb-label{font:700 18px/1.3 var(--grot);font-stretch:85%;color:var(--on-dark-2)}
+.nb-quote{margin:0;font:italic 400 clamp(40px,4.8vw,76px)/1.06 var(--serif);color:var(--gold);letter-spacing:-.01em}
+.nb-cite{font:500 16px/1.5 var(--grot);color:var(--on-dark-2)} .nb-cite a{color:var(--on-dark)}
+@media (max-width:860px){.nb-grid{grid-template-columns:1fr}.nb-photo{min-height:0;aspect-ratio:4/5}.nb-copy{padding-left:var(--gut-l);padding-right:var(--gut-r)}.nb-photo figcaption{padding-left:var(--gut-l)}}
 
 /* writing list: big condensed dates do the work numbers would */
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
@@ -329,24 +341,6 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
-<section class="strike" aria-labelledby="strikeH" data-wp="Pattern: what I was taught (List, block style “Struck”)"><span class="wp-tag">Pattern: struck list · List block style</span>
-  <div class="wrap">
-    <h2 class="h2" id="strikeH">What I was taught</h2>
-    <ul class="lines" id="lines">
-      <li><button type="button" aria-pressed="true"><span>God is angry.</span></button></li>
-      <li><button type="button" aria-pressed="true"><span>God is watching.</span></button></li>
-      <li><button type="button" aria-pressed="true"><span>God is keeping score.</span></button></li>
-      <li class="final">God is love.</li>
-    </ul>
-    <div class="strike-foot">
-      <p class="small">Tap a line to cross it out yourself.</p>
-      <div>
-        <p class="statement">I spent forty years explaining God from behind a pulpit, and for most of them I was afraid of Him. This is where I write about what changed.</p>
-        <p class="small" style="margin-top:18px">Randall</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="book" aria-labelledby="bookH" data-wp="Pattern: book CTA (Columns: Group + Heading, Quote, Buttons)"><span class="wp-tag">Pattern: book CTA · rays + tilt are theme CSS/JS</span>
   <div class="rays" aria-hidden="true"></div>
@@ -379,6 +373,36 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
+<section class="strike" aria-labelledby="strikeH" data-wp="Pattern: what I was taught (List, block style “Struck”)"><span class="wp-tag">Pattern: struck list · List block style</span>
+  <div class="wrap">
+    <h2 class="h2" id="strikeH">What I was taught</h2>
+    <ul class="lines" id="lines">
+      <li><button type="button" aria-pressed="true"><span>God is angry.</span></button></li>
+      <li><button type="button" aria-pressed="true"><span>God is watching.</span></button></li>
+      <li><button type="button" aria-pressed="true"><span>God is keeping score.</span></button></li>
+      <li class="came">What I came to believe</li>
+      <li class="final">God is love.</li>
+    </ul>
+    <div class="strike-foot">
+      <p class="small">Tap a line to cross it out yourself.</p>
+      <div>
+        <p class="statement">I spent forty years explaining God from behind a pulpit, and for most of them I was afraid of Him. This is where I write about what changed.</p>
+        <p class="small" style="margin-top:18px">Randall</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="questions" aria-labelledby="qH" data-wp="Pattern: questions welcome (Heading + List of question/link groups)"><span class="wp-tag">Pattern: questions welcome · links edited by Randall</span>
+  <div class="wrap">
+    <div class="q-head">
+      <h2 class="q-title" id="qH">Questions welcome.</h2>
+      <p class="statement">New here? You don’t have to know what you believe to find something worth reading.</p>
+    </div>
+    <ol class="q-list" id="qList"></ol>
+  </div>
+</section>
+
 <section aria-labelledby="writeH" data-wp="Pattern: latest writing (Query Loop: Post Date, Post Title, Post Excerpt)"><span class="wp-tag">Query Loop · latest 5 posts</span>
   <div class="wrap">
     <div class="sec-head">
@@ -389,12 +413,14 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
-<section class="questions" aria-labelledby="qH" data-wp="Pattern: start with a question (Columns: Image + List of links)"><span class="wp-tag">Pattern: start with a question</span>
-  <div class="q-grid">
-    <figure class="q-photo"><img class="drift" src="assets/tree.jpg" alt="A bare tree in winter fog, black and white"><figcaption>Photograph by Randall Hartman</figcaption></figure>
-    <div class="q-copy">
-      <h2 class="h2" id="qH">New here? Start with your question.</h2>
-      <ul class="q-list" id="qList"></ul>
+
+<section class="notebook" aria-labelledby="noteH" data-wp="Pattern: notebook quote (Columns: Image + Quote, gold block style)"><span class="wp-tag">Pattern: notebook quote</span>
+  <div class="nb-grid">
+    <figure class="nb-photo"><img class="drift" src="assets/tree.jpg" alt="A bare tree in winter fog, black and white"><figcaption>Photograph by Randall Hartman</figcaption></figure>
+    <div class="nb-copy">
+      <h2 class="nb-label" id="noteH">From Randall’s notebook</h2>
+      <blockquote class="nb-quote"><p>“What kind of person is my picture of God teaching me to become?”</p></blockquote>
+      <p class="nb-cite">Randall Hartman, in <a href="#essay" data-go="essay">When We Aim God’s Lightning Toward Other People</a></p>
     </div>
   </div>
 </section>
@@ -636,11 +662,12 @@ section{padding-block:clamp(80px,10vw,150px)}
   document.getElementById('homeRows').innerHTML=POSTS.slice(0,5).map((p,i)=>row(p,i===0)).join('');
 
   const QS=[
-    {q:'Were you taught to be afraid of God?',links:[2,3]},
-    {q:'Are your questions not welcome at church?',links:[1,4]},
-    {q:'Are you rethinking who belongs?',links:[0,5]}
+    {q:'What if I was taught to fear the wrong God?',links:[2,3,0]},
+    {q:'Is it okay to question what I’ve always believed?',links:[1,4]},
+    {q:'Who gets to belong?',links:[0,5]},
+    {q:'What happens when a pastor changes his mind?',links:[5],extra:'<a href="#about" data-go="about">Randall’s transition story</a>'}
   ];
-  document.getElementById('qList').innerHTML=QS.map(x=>`<li><p class="q">${esc(x.q)}</p><div class="ans">${x.links.map(i=>`<a href="#essay" data-go="essay">${esc(POSTS[i].title)}</a>`).join('')}</div></li>`).join('')+`<li><p class="q">Want the whole story?</p><div class="ans"><a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene of the memoir, free</a></div></li>`;
+  document.getElementById('qList').innerHTML=QS.map(x=>`<li><p class="q">${esc(x.q)}</p><div class="ans">${x.links.map(i=>`<a href="#essay" data-go="essay">${esc(POSTS[i].title)}</a>`).join('')}${x.extra||''}</div></li>`).join('');
 
   // archive
   const topics=['All','Fear','Doubt','Belonging'];let topic='All',q='';
