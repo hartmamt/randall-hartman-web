@@ -11,7 +11,7 @@
 :root{
   --night:#061419; --storm:#17262D; --slate:#4E5F69; --fog:#C9D0D4; --mist:#E6EAEB; --paper:#F6F7F5;
   --gold:#F6B90E; --orange:#E08322; --orange-hi:#EB9536;
-  --text:#061419; --text-2:#2E3D44; --on-dark:#F6F7F5; --on-dark-2:#B9C2C7;
+  --text:#061419; --text-2:#22323A; --on-dark:#F6F7F5; --on-dark-2:#CBD3D7;
   --serif:"EB Garamond",Garamond,Georgia,serif;
   --grot:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
   --wide:1240px; --measure:680px;
@@ -39,8 +39,8 @@ section{padding-block:clamp(80px,10vw,150px)}
 .h2{font:400 clamp(38px,4.4vw,64px)/1.02 var(--serif);letter-spacing:-.015em}
 .h3{font:500 clamp(26px,2.4vw,34px)/1.15 var(--serif)}
 .statement{font:400 clamp(23px,2.2vw,32px)/1.3 var(--serif)}
-.body-serif{font:400 clamp(19px,1.4vw,21px)/1.62 var(--serif);color:var(--text-2)}
-.small{font:500 15px/1.5 var(--grot);color:var(--text-2)}
+.body-serif{font:400 clamp(20px,1.5vw,22px)/1.6 var(--serif);color:var(--text-2)}
+.small{font:500 16px/1.5 var(--grot);color:var(--text-2)}
 .book .body-serif,.join .body-serif{color:var(--on-dark-2)}
 
 /* actions */
@@ -55,7 +55,8 @@ section{padding-block:clamp(80px,10vw,150px)}
 .ph{display:inline-block;font:700 12px/1 var(--grot);background:var(--gold);color:var(--night);padding:5px 7px;vertical-align:middle}
 
 /* announcement + header */
-.announce{background:var(--gold);color:var(--night);font:600 15px/1.4 var(--grot)}
+.announce{background:var(--night);color:var(--on-dark);font:600 15px/1.4 var(--grot)}
+.announce a{color:var(--gold)}
 .announce .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;padding-block:10px;text-align:center}
 .announce a{font-weight:800}
 .site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper)}
@@ -83,6 +84,8 @@ section{padding-block:clamp(80px,10vw,150px)}
 .roles{font:700 clamp(17px,1.4vw,20px)/1.3 var(--grot);font-stretch:85%;color:var(--slate);letter-spacing:.01em}
 .roles span{color:var(--orange)}
 .hero .statement{max-width:600px}
+.hero-line{font-style:italic;font-size:clamp(28px,2.8vw,40px);line-height:1.15}
+.hero-copy .body-serif{max-width:600px;margin-top:-8px}
 .hero-copy .name{margin-bottom:-12px}
 .book-note{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;margin-top:12px;padding-top:28px;box-shadow:inset 0 3px 0 var(--night)}
 .book-note p{flex:1 1 220px;font:400 19px/1.45 var(--serif);color:var(--text-2)}
@@ -99,12 +102,13 @@ section{padding-block:clamp(80px,10vw,150px)}
 .strike .h2{color:var(--on-dark-2);font-size:clamp(26px,2.4vw,34px)}
 .lines{list-style:none;margin:28px 0 0;padding:0}
 .lines li{width:fit-content;max-width:100%}
-.lines button{position:relative;display:block;max-width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:#8E999E;font:900 clamp(52px,9.6vw,156px)/.94 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
-.lines button span{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:.14em;text-decoration-skip-ink:none;transition:text-decoration-color .5s ease,color .5s ease}
+.lines button{position:relative;display:block;max-width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:var(--fog);font:900 clamp(52px,9.6vw,156px)/.94 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
+.lines button span{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:.09em;text-decoration-skip-ink:none;transition:text-decoration-color .5s ease,color .5s ease}
 .lines button[aria-pressed="false"]{color:var(--on-dark)}
 .lines button[aria-pressed="false"] span{text-decoration-color:transparent}
 .lines li.came{margin-top:clamp(40px,5vw,72px);font:400 clamp(26px,2.4vw,34px)/1.1 var(--serif);color:var(--on-dark-2)}
 .lines li.final{margin-top:.1em;color:var(--gold);font:italic 400 clamp(64px,11vw,184px)/1 var(--serif);letter-spacing:-.02em}
+.strike-hint{margin-top:40px;color:var(--on-dark-2)}
 .strike-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px clamp(32px,6vw,96px);margin-top:clamp(56px,7vw,96px);align-items:end}
 .strike-foot .statement{color:var(--on-dark)}
 .strike-foot .small{color:var(--on-dark-2)}
@@ -153,7 +157,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .q-list li::before{content:counter(q,decimal-leading-zero);grid-row:span 2;font:900 clamp(44px,4.4vw,64px)/.85 var(--grot);font-stretch:62%;color:var(--orange)}
 .q-list .q{font:500 clamp(26px,2.4vw,34px)/1.15 var(--serif)}
 .q-list .ans{display:flex;flex-direction:column;gap:2px;margin-top:12px}
-.q-list .ans a{font:500 17px/1.4 var(--grot);padding-block:6px;width:fit-content}
+.q-list .ans a{font:500 18px/1.4 var(--grot);padding-block:6px;width:fit-content}
 @media (max-width:860px){.q-head,.q-list{grid-template-columns:1fr}}
 
 /* notebook quote: gold words beside Randall's photograph */
@@ -174,9 +178,10 @@ section{padding-block:clamp(80px,10vw,150px)}
 .post .d{font:900 clamp(40px,4vw,58px)/.9 var(--grot);font-stretch:62%;text-transform:uppercase;color:var(--slate)}
 .post .d small{display:block;margin-top:6px;font:600 15px/1 var(--grot);font-stretch:100%;text-transform:none;color:var(--text-2)}
 .post .t{display:block;font:500 clamp(26px,2.4vw,34px)/1.15 var(--serif);color:var(--night)}
-.post .x{display:block;margin-top:8px;font:400 19px/1.5 var(--serif);color:var(--text-2);max-width:640px}
+.post .x{display:block;margin-top:8px;font:400 20px/1.5 var(--serif);color:var(--text-2);max-width:640px}
 .post:hover .t{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:5px}
 .post:hover .d{color:var(--night)}
+.archive-cta{margin-top:40px}
 .post.lead-post .t{font-size:clamp(34px,3.6vw,52px);line-height:1.05}
 @media (max-width:640px){.post{grid-template-columns:1fr}.post .d{font-size:36px}.post .d small{display:inline;margin-left:10px}}
 
@@ -192,13 +197,13 @@ section{padding-block:clamp(80px,10vw,150px)}
 @media (max-width:860px){.about-grid{grid-template-columns:1fr}.tree{max-width:520px}}
 
 /* speaking: the one gold field */
-.speak{background:var(--gold);color:var(--night);padding-block:clamp(64px,8vw,110px)}
+.speak{background:var(--mist);color:var(--night);padding-block:clamp(64px,8vw,110px)}
 .speak-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px clamp(32px,6vw,96px);align-items:start}
 .speak .h2{font:500 clamp(40px,4.6vw,68px)/1 var(--serif);letter-spacing:-.015em}
 .speak .body-serif{color:var(--night)}
 .topics{list-style:none;margin:20px 0 28px;padding:0;display:flex;flex-direction:column;gap:14px}
 .topics li{font:500 clamp(21px,1.8vw,25px)/1.3 var(--serif)}
-.topics li span{display:block;font:400 18px/1.45 var(--serif);color:#3A3005}
+.topics li span{display:block;font:400 19px/1.45 var(--serif);color:var(--text-2)}
 @media (max-width:760px){.speak-grid{grid-template-columns:1fr}}
 
 /* join */
@@ -333,12 +338,13 @@ section{padding-block:clamp(80px,10vw,150px)}
   <div class="hero-copy">
     <h1 class="name">Randall Hartman</h1>
     <p class="roles">Writer <span>·</span> Author <span>·</span> Former Pastor</p>
-    <p class="statement">Forty years in the pulpit taught me to fear God. Now I write about the God I found instead, and the people I was taught to keep at a distance.</p>
+    <p class="statement hero-line">“The God I feared wasn’t the God I found.”</p>
+    <p class="body-serif">I spent nearly forty years as a pastor, carrying questions I was often afraid to ask. Today I write about faith, doubt, the cost of changing my mind, and discovering a God who looks more like love than fear.</p>
     <div class="book-note">
-      <p>New memoir: <em>A God Awful God</em>, out December 8. The opening scene is free.</p>
+      <p>That line is the subtitle of my memoir, <em>A God Awful God</em>, out December 8. The opening scene is free.</p>
       <a class="btn btn-go" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Get the free excerpt</a>
     </div>
-    <a class="more" href="#writing" data-go="writing" style="align-self:flex-start">Read the writing</a>
+    <a class="more" href="#writing" data-go="writing" style="align-self:flex-start">Explore all writing</a>
   </div>
 </section>
 
@@ -361,7 +367,6 @@ section{padding-block:clamp(80px,10vw,150px)}
       <p class="sub">The God I Feared Wasn’t the God I Found</p>
       <p class="when">A memoir · Seven Lanterns Press · December 8, 2026</p>
       <p class="body-serif">It began with a picture in the family Bible: God standing on the clouds, lightning shooting from His eyes. This is the story of how that picture changed, and what happened when the change began rearranging the way Randall saw other people.</p>
-      <blockquote class="pull">“The lightning had not stayed inside the picture. We had learned to aim it at people.”</blockquote>
       <div class="endorse">
         <figure data-wp="Pattern: endorsement quote" style="position:relative"><span class="wp-tag">Pattern: endorsement</span><blockquote>“[One-line endorsement from Thomas Jay Oord, the line chosen for the cover.]”</blockquote><figcaption>Thomas Jay Oord <span>[credential]</span></figcaption></figure>
         <figure><blockquote>“[One-line endorsement from David P. Gushee.]”</blockquote><figcaption>David P. Gushee <span>[credential]</span></figcaption></figure>
@@ -384,13 +389,7 @@ section{padding-block:clamp(80px,10vw,150px)}
       <li class="came">What I came to believe</li>
       <li class="final">God is love.</li>
     </ul>
-    <div class="strike-foot">
-      <p class="small">Tap a line to cross it out yourself.</p>
-      <div>
-        <p class="statement">I spent forty years explaining God from behind a pulpit, and for most of them I was afraid of Him. This is where I write about what changed.</p>
-        <p class="small" style="margin-top:18px">Randall</p>
-      </div>
-    </div>
+    <p class="small strike-hint">Tap a line to cross it out yourself.</p>
   </div>
 </section>
 
@@ -404,13 +403,13 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
-<section aria-labelledby="writeH" data-wp="Pattern: latest writing (Query Loop: Post Date, Post Title, Post Excerpt)"><span class="wp-tag">Query Loop · latest 5 posts</span>
+<section aria-labelledby="writeH" data-wp="Pattern: latest writing (Query Loop: Post Date, Post Title, Post Excerpt)"><span class="wp-tag">Query Loop · latest 4 posts</span>
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2" id="writeH">Latest writing</h2>
-      <a class="more" href="#writing" data-go="writing">All writing, back to 2016</a>
     </div>
     <div id="homeRows"></div>
+    <div class="actions archive-cta"><a class="btn btn-ink" href="#writing" data-go="writing">Explore all writing</a><span class="small">Every piece back to 2016, searchable by topic.</span></div>
   </div>
 </section>
 
@@ -426,34 +425,14 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
-<section aria-labelledby="aboutH" data-wp="Pattern: about (Columns: Heading, Paragraph, List + Image)"><span class="wp-tag">Pattern: about</span>
+<section aria-labelledby="aboutH" data-wp="Pattern: about, short (Columns: Heading, Paragraph, Buttons + Image)"><span class="wp-tag">Pattern: about, short</span>
   <div class="wrap about-grid">
     <div>
       <h2 class="h2" id="aboutH">A pastor who kept asking questions</h2>
-      <p class="body-serif">Randall Hartman served nearly forty years as a lead pastor in Indiana, Ohio, and Michigan, then seven more as an interim pastor from Oregon to Alaska. He has written for HuffPost, The Good Men Project, and Sixty and Me, and is still an ordained elder in the Church of the Nazarene.</p>
-      <ul class="facts">
-        <li><b>~40 years</b><span>Lead pastor in Indiana, Ohio, and Michigan</span></li>
-        <li><b>7 states</b><span>Interim pastor, Oregon to Alaska</span></li>
-        <li><b>51 years</b><span>Married, two children, seven grandchildren</span></li>
-      </ul>
-      <div class="actions"><a class="btn btn-ink" href="#about" data-go="about">Read his story</a></div>
+      <p class="body-serif">Nearly forty years as a lead pastor in Indiana, Ohio, and Michigan, then seven as an interim pastor from Oregon to Alaska. Still an ordained elder in the Church of the Nazarene. Randall also speaks with churches, retreats, book groups, and podcasts.</p>
+      <div class="actions" style="margin-top:28px"><a class="btn btn-ink" href="#about" data-go="about">Read his story</a><a class="more" href="#speaking" data-go="about" data-anchor="speaking">Invite Randall to speak</a></div>
     </div>
     <figure class="tree"><img src="assets/lace.jpg" alt="Two dried Queen Anne’s lace heads against an evening sky, black and white"><figcaption>Photograph by Randall Hartman</figcaption></figure>
-  </div>
-</section>
-
-<section class="speak" aria-labelledby="speakHomeH" data-wp="Pattern: speaking band (Group with gold background)"><span class="wp-tag">Pattern: speaking band</span>
-  <div class="wrap speak-grid">
-    <h2 class="h2" id="speakHomeH">Invite Randall to speak</h2>
-    <div>
-      <p class="body-serif">For churches, retreats, book groups, classes, and podcasts. Conversations about fear, faith, and the questions people were told not to ask.</p>
-      <ul class="topics">
-        <li>When God had lightning eyes</li>
-        <li>Permission to ask</li>
-        <li>Who belongs?</li>
-      </ul>
-      <a class="btn btn-ink" href="#speaking" data-go="about" data-anchor="speaking">Speaking topics and contact</a>
-    </div>
   </div>
 </section>
 
@@ -660,7 +639,7 @@ section{padding-block:clamp(80px,10vw,150px)}
   ];
   const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const row=(p,lead)=>`<a class="post${lead?' lead-post':''}" href="#essay" data-go="essay"><span class="d">${esc(p.date[0])}<small>${esc(p.date[1]||'Earlier')} · ${esc(p.topic)}</small></span><span><span class="t">${esc(p.title)}</span><span class="x">${esc(p.ex)}</span></span></a>`;
-  document.getElementById('homeRows').innerHTML=POSTS.slice(0,5).map((p,i)=>row(p,i===0)).join('');
+  document.getElementById('homeRows').innerHTML=POSTS.slice(0,4).map((p,i)=>row(p,i===0)).join('');
 
   const QS=[
     {q:'What if I was taught to fear the wrong God?',links:[2,3,0]},
