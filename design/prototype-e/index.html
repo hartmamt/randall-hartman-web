@@ -80,20 +80,20 @@ section{padding-block:clamp(80px,10vw,150px)}
 .hero-photo{position:relative;min-height:100%;background:var(--fog);overflow:hidden}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
 .hero-photo figcaption{position:absolute;left:0;bottom:0;background:var(--paper);padding:10px 16px 0 max(var(--gut-l),3.2vw);font:500 14px var(--grot);color:var(--text-2)}
-.hero-copy{padding:clamp(48px,7vw,110px) max(var(--gut-r),3.2vw) clamp(56px,7vw,110px) clamp(32px,5vw,88px);display:flex;flex-direction:column;gap:28px;justify-content:center;min-width:0}
+.hero-copy{padding:clamp(36px,4.5vw,72px) max(var(--gut-r),3.2vw) clamp(40px,5vw,80px) clamp(32px,5vw,88px);display:flex;flex-direction:column;gap:22px;justify-content:center;min-width:0}
 .roles{font:700 clamp(17px,1.4vw,20px)/1.3 var(--grot);font-stretch:85%;color:var(--slate);letter-spacing:.01em}
 .roles span{color:var(--orange)}
 .hero .statement{max-width:600px}
 .hero-line{font-style:italic;font-size:clamp(28px,2.8vw,40px);line-height:1.15}
 .hero-copy .body-serif{max-width:600px;margin-top:-8px}
 .hero-copy .name{margin-bottom:-12px}
-.book-note{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;margin-top:12px;padding-top:28px;box-shadow:inset 0 3px 0 var(--night)}
+.book-note{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:4px;padding-top:22px;box-shadow:inset 0 3px 0 var(--night)}
 .book-note p{flex:1 1 220px;font:400 19px/1.45 var(--serif);color:var(--text-2)}
 .book-note em{color:var(--night);font-style:italic}
 @media (max-width:860px){
   .hero{grid-template-columns:1fr}
   .hero-copy{order:-1;padding-left:var(--gut-l);padding-right:var(--gut-r)}
-  .hero-photo{aspect-ratio:1/1;min-height:0}
+  .hero-photo{aspect-ratio:16/11;min-height:0}
   .hero-photo figcaption{padding-left:var(--gut-l)}
 }
 
@@ -102,7 +102,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .strike .h2{color:var(--on-dark-2);font-size:clamp(26px,2.4vw,34px)}
 .lines{list-style:none;margin:28px 0 0;padding:0}
 .lines li{width:fit-content;max-width:100%}
-.lines button{position:relative;display:block;max-width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:var(--fog);font:900 clamp(52px,9.6vw,156px)/.94 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
+.lines button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;position:relative;display:block;max-width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:var(--fog);font:900 clamp(52px,9.6vw,156px)/.94 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
 .lines button span{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:.09em;text-decoration-skip-ink:none;transition:text-decoration-color .5s ease,color .5s ease}
 .lines button[aria-pressed="false"]{color:var(--on-dark)}
 .lines button[aria-pressed="false"] span{text-decoration-color:transparent}
@@ -114,6 +114,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .strike-foot .small{color:var(--on-dark-2)}
 .strike-foot a{color:var(--on-dark)}
 @media (max-width:760px){.strike-foot{grid-template-columns:1fr}}
+@media (max-width:420px){.lines button{font-size:clamp(40px,12.4vw,52px)}.lines li.final{font-size:clamp(54px,16vw,64px)}.q-title{font-size:clamp(52px,15vw,64px)}.name{font-size:clamp(38px,10.5vw,44px)}}
 @media (prefers-reduced-motion:reduce){.lines button span{transition:none}}
 
 /* book */
@@ -146,7 +147,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .endorse figcaption{margin-top:14px;font:700 15px/1.4 var(--grot);font-stretch:85%;color:var(--gold)}
 .endorse figcaption span{font-weight:500;color:var(--on-dark-2)}
 .book .more{color:var(--on-dark)}
-@media (max-width:860px){.book-grid{grid-template-columns:1fr}.book .cover-col{max-width:300px}}
+@media (max-width:860px){.book-grid{grid-template-columns:1fr}.book .cover-col{max-width:min(240px,70%)}}
 
 /* questions welcome: the signature section */
 .questions{background:var(--paper)}
@@ -218,6 +219,11 @@ section{padding-block:clamp(80px,10vw,150px)}
 .light .field input{background:var(--mist)}
 .field input::placeholder{color:#6B777D}
 .signup .btn{flex:1 1 100%;justify-content:center}
+.signup-cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start;align-self:end}
+.signup-cta .btn{min-height:58px;padding:0 30px;font-size:18px}
+.signup-cta .fine{font:400 16px/1.5 var(--grot);color:var(--on-dark-2)}
+.signup-cta.light .fine{color:var(--text-2)}
+.endbox .signup-cta{margin-top:22px}
 .signup .fine{flex-basis:100%;font:400 15px/1.5 var(--grot);color:var(--on-dark-2)}
 .signup .fine a{color:var(--on-dark)}
 .light .fine{color:var(--text-2)} .light .fine a{color:var(--night)}
@@ -230,6 +236,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 32px;font:600 17px var(--grot);font-stretch:85%}
 .foot-links a{text-decoration:none;padding-block:8px} .foot-links a:hover{text-decoration:underline;text-decoration-color:var(--orange)}
 .foot-name{margin-top:40px;font:400 clamp(48px,10vw,150px)/.95 var(--serif);color:var(--fog);white-space:nowrap;letter-spacing:-.02em}
+.foot-base a{color:var(--on-dark-2);text-decoration-color:var(--slate)}
 .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font:500 14px var(--grot);color:var(--on-dark-2)}
 
 /* writing archive */
@@ -436,18 +443,13 @@ section{padding-block:clamp(80px,10vw,150px)}
   </div>
 </section>
 
-<section class="join" id="join" aria-labelledby="joinH" data-wp="Pattern: newsletter box (MailerLite form block)"><span class="wp-tag">Pattern: newsletter · MailerLite block</span>
+<section class="join" id="join" aria-labelledby="joinH" data-wp="Pattern: newsletter box (MailerLite form block)"><span class="wp-tag">Pattern: newsletter · MailerLite form or link</span>
   <div class="wrap join-grid">
     <div>
       <h2 class="h2" id="joinH">Get the opening scene of the book, free</h2>
       <p class="body-serif">Then an occasional letter from Randall: each new piece of writing, notes from behind the book, and excerpts not shared anywhere else. Unsubscribe any time.</p>
     </div>
-    <form class="signup" data-signup>
-      <div class="field"><label for="fn1">First name</label><input id="fn1" type="text" autocomplete="given-name"></div>
-      <div class="field"><label for="em1">Email address</label><input id="em1" type="email" autocomplete="email" placeholder="you@example.com" required></div>
-      <button type="submit" class="btn btn-go">Send me the excerpt</button>
-      <p class="fine">On the live site this is Randall’s MailerLite form. <a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Open the signup page</a></p>
-    </form>
+    <div class="signup-cta"><a class="btn btn-go" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Send me the excerpt</a><p class="fine">Free. Your email is never shared, and you can unsubscribe any time.</p></div>
   </div>
 </section>
 </div>
@@ -501,10 +503,7 @@ section{padding-block:clamp(80px,10vw,150px)}
       <div class="tags"><a class="tag" href="#writing" data-go="writing">Image of God</a><a class="tag" href="#writing" data-go="writing">Belonging</a><a class="tag" href="#book" data-go="book">A God Awful God</a></div>
       <aside class="endbox" data-wp="Pattern: essay-end signup" style="position:relative"><span class="wp-tag">Pattern: essay-end signup</span>
         <h2 class="h3">Get the next one in your inbox, and the opening scene of <em>A God Awful God</em> free.</h2>
-        <form class="signup" data-signup>
-          <div class="field"><label for="em2">Email address</label><input id="em2" type="email" autocomplete="email" required></div>
-          <button type="submit" class="btn btn-go">Subscribe</button>
-        </form>
+        <div class="signup-cta"><a class="btn btn-go" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Subscribe free</a><p class="fine">Free. Your email is never shared, and you can unsubscribe any time.</p></div>
       </aside>
       <div class="author"><img src="assets/portrait.jpg" alt=""><p><strong>Randall Hartman</strong> was a pastor for nearly forty years. He writes about faith, fear, and finding a God worth trusting. <a href="#about" data-go="about">More about Randall</a></p></div>
     </div>
@@ -527,7 +526,7 @@ section{padding-block:clamp(80px,10vw,150px)}
           <figure><blockquote>“[Full endorsement from David P. Gushee, exactly as approved. Room for two or three sentences.]”</blockquote><figcaption>David P. Gushee <span>[credential]</span></figcaption></figure>
         </div>
         <div class="actions">
-          <a class="btn btn-go" href="#excerpt" data-anchor="excerpt">Read the opening scene</a>
+          <a class="btn btn-go" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Read the opening scene free</a>
           <a class="more" href="#retailers" data-anchor="retailers">Pre-order</a>
         </div>
       </div>
@@ -540,11 +539,7 @@ section{padding-block:clamp(80px,10vw,150px)}
         <p class="body-serif" style="margin-top:16px">The opening scene of the memoir, free by email.</p>
         <div class="fade" style="margin-top:28px"><p>[The first paragraphs of the excerpt go here, so readers get a taste before they sign up. Pull them from the MailerLite excerpt PDF.]</p></div>
       </div>
-      <form class="signup light" data-signup style="align-self:end">
-        <div class="field"><label for="fn3">First name</label><input id="fn3" type="text" autocomplete="given-name"></div>
-        <div class="field"><label for="em3">Email address</label><input id="em3" type="email" autocomplete="email" required></div>
-        <button type="submit" class="btn btn-go">Send me the excerpt</button>
-      </form>
+      <div class="signup-cta light"><a class="btn btn-go" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Send me the excerpt</a><p class="fine">Free. Your email is never shared, and you can unsubscribe any time.</p></div>
     </div>
   </section>
   <section id="retailers">
@@ -604,8 +599,8 @@ section{padding-block:clamp(80px,10vw,150px)}
           <li>Permission to ask<span>Why honest questions are a way into faith, not out of it.</span></li>
           <li>Who belongs?<span>What happens when your picture of God changes the way you see your neighbor.</span></li>
         </ul>
-        <a class="btn btn-ink" href="#speaking" onclick="return false">Invite Randall</a>
-        <p class="small" style="margin-top:14px;color:var(--night)"><span class="ph" style="background:var(--night);color:var(--gold)">Draft</span> Topics and contact details to confirm with Randall.</p>
+        <div class="actions"><a class="btn btn-ink" href="https://www.randallhartman.com/contact/" target="_blank" rel="noopener">Invite Randall to speak</a><span class="small">Opens his contact form. He replies personally.</span></div>
+        <p class="small" style="margin-top:14px"><span class="ph">Placeholder</span> Topics to confirm with Randall.</p>
       </div>
     </div>
   </section>
@@ -619,7 +614,7 @@ section{padding-block:clamp(80px,10vw,150px)}
       <a href="#about" data-go="about">About</a><a href="#book" data-go="book">A God Awful God</a><a href="#writing" data-go="writing">Writing</a><a href="#speaking" data-go="about" data-anchor="speaking">Speaking</a><a href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noopener">Subscribe</a>
     </nav>
     <div class="foot-name" aria-hidden="true" id="footName">Randall Hartman</div>
-    <div class="foot-base"><span>© 2026 Randall Hartman · All photographs by Randall</span><span>randallhartman.com</span></div>
+    <div class="foot-base"><span>© 2026 Randall Hartman · All photographs by Randall</span><span><a href="#privacy" onclick="return false">Privacy policy</a> · <a href="https://www.randallhartman.com/contact/" target="_blank" rel="noopener">Contact</a></span></div>
   </div>
 </footer>
 
@@ -685,12 +680,7 @@ section{padding-block:clamp(80px,10vw,150px)}
   fromHash(true);
   menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(o));menuBtn.textContent=o?'Close':'Menu';});
 
-  // forms
-  document.querySelectorAll('[data-signup]').forEach(f=>f.addEventListener('submit',e=>{
-    e.preventDefault();const em=f.querySelector('input[type=email]');if(em&&!em.value.includes('@')){em.focus();return;}
-    f.querySelectorAll('.field,button,.fine').forEach(x=>x.hidden=true);
-    const p=document.createElement('p');p.className='done';p.textContent='Thank you. On the live site, the excerpt would be on its way to your inbox.';f.appendChild(p);
-  }));
+
 
   // What I was taught: lines start crossed out (the resting state); with motion on, each is written out clean and then struck as it reaches the middle of the screen. Tap toggles.
   const btns=[...document.querySelectorAll('#lines button')];
