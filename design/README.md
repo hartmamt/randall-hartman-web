@@ -23,4 +23,5 @@ https://claude.ai/artifact/CM4PvsXsAsX3y7RSLwNSV7 · source in `prototype-e/`. B
 - Imagery is only Randall's own photos, all in one black-and-white treatment: the white-glasses portrait (from his site, 2022/10/IMG_0965), the fog tree, and the Queen Anne's lace shot (2021/05/2driedup, cropped to remove the signature that has the middle initial). The generated collages, desk and lightning images are gone.
 - Type: EB Garamond plus Archivo condensed (replaces Inter). Archivo carries the name, dates and struck lines (Version C's boldness, used in a few places).
 - Colours: fog ground (a tint of the cover's pale strokes), night and storm bands, doorway gold as one full field (Speaking), path orange only on buttons and strike marks. No italic accent words, eyebrows, glass header or gradients.
+- Book section borrows B's display (Randall liked it): slowly spinning gold rays, the "Cover coming soon" placeholder tilting toward the pointer with a "Dec 8" tag, title stacked in caps. Rays and tilt are a few lines of theme CSS/JS on the book pattern.
 - "Show WordPress blocks" in the bottom ribbon labels each section with the block pattern / template it becomes.
