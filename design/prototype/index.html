@@ -126,6 +126,13 @@ section{padding-block:clamp(72px,9vw,130px)}
 .lines li::after{content:"";position:absolute;left:-2%;right:-2%;top:48%;height:.12em;background:var(--orange);transform:rotate(-1.5deg) scaleX(1);transform-origin:left}
 .lines li.final{color:var(--gold);font:italic 400 clamp(60px,10vw,170px)/1 var(--serif);text-transform:none;letter-spacing:-.02em;margin-top:.15em}
 .lines li.final::after{display:none}
+.motion .lines li{color:var(--white);transition:color .6s ease .35s}
+.motion .lines li::after{transform:rotate(-1.5deg) scaleX(0);transition:transform .7s cubic-bezier(.6,0,.2,1)}
+.motion .lines li.struck{color:#BDB6A9}
+.motion .lines li.struck::after{transform:rotate(-1.5deg) scaleX(1)}
+.motion .lines li.final{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s;color:var(--gold)}
+.motion .lines li.final.struck{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){.motion .lines li,.motion .lines li::after,.motion .lines li.final{transition:none}}
 .strike-note{display:flex;flex-wrap:wrap;gap:24px 60px;margin-top:clamp(48px,6vw,90px)}
 .strike-note .lbl{flex:0 0 200px;font:600 13px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#BDB6A9}
 .strike-note .txt{flex:1 1 420px;max-width:760px;font:400 clamp(23px,2.1vw,30px)/1.4 var(--serif);color:var(--white)}
@@ -852,6 +859,10 @@ section{padding-block:clamp(72px,9vw,130px)}
     f.querySelectorAll('.field,button,.fine').forEach(x=>x.hidden=true);
     const p=document.createElement('p');p.className='done';p.textContent='Thank you. On the live site, the excerpt would be on its way to your inbox.';f.appendChild(p);
   }));
+
+  // "What I was taught": each line is crossed out as it scrolls past the middle of the screen
+  const strikeIO=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('struck',e.isIntersecting||e.boundingClientRect.top<0)),{rootMargin:'0px 0px -45% 0px'});
+  document.querySelectorAll('.lines li').forEach(li=>strikeIO.observe(li));
 
   // animations toggle
   const mt=document.getElementById('motionT');
