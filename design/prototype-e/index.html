@@ -35,7 +35,7 @@ p{margin:0}
 section{padding-block:clamp(80px,10vw,150px)}
 
 /* type */
-.name{font:900 clamp(64px,10.4vw,172px)/.84 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em}
+.name{font:500 clamp(44px,5.2vw,80px)/1 var(--serif);letter-spacing:-.015em}
 .h2{font:400 clamp(38px,4.4vw,64px)/1.02 var(--serif);letter-spacing:-.015em}
 .h3{font:500 clamp(26px,2.4vw,34px)/1.15 var(--serif)}
 .statement{font:400 clamp(23px,2.2vw,32px)/1.3 var(--serif)}
@@ -60,7 +60,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 .announce a{font-weight:800}
 .site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper)}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:70px}
-.brand{font:900 26px/1 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:.01em;text-decoration:none;color:var(--night)}
+.brand{font:500 25px/1 var(--serif);letter-spacing:-.005em;text-decoration:none;color:var(--night)}
 .nav{display:flex;align-items:center;gap:30px}
 .nav a.nl{font:600 17px var(--grot);font-stretch:85%;text-decoration:none;padding:12px 0;color:var(--night)}
 .nav a.nl:hover,.nav a.nl[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:3px;text-underline-offset:8px}
@@ -75,14 +75,15 @@ section{padding-block:clamp(80px,10vw,150px)}
 }
 
 /* hero: portrait bleeds off the left edge, name set huge beside it */
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);background:var(--paper);padding:0}
+.hero{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);background:var(--paper);padding:0}
 .hero-photo{position:relative;min-height:100%;background:var(--fog);overflow:hidden}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
 .hero-photo figcaption{position:absolute;left:0;bottom:0;background:var(--paper);padding:10px 16px 0 max(var(--gut-l),3.2vw);font:500 14px var(--grot);color:var(--text-2)}
 .hero-copy{padding:clamp(48px,7vw,110px) max(var(--gut-r),3.2vw) clamp(56px,7vw,110px) clamp(32px,5vw,88px);display:flex;flex-direction:column;gap:28px;justify-content:center;min-width:0}
 .roles{font:700 clamp(17px,1.4vw,20px)/1.3 var(--grot);font-stretch:85%;color:var(--slate);letter-spacing:.01em}
 .roles span{color:var(--orange)}
-.hero .statement{max-width:600px;margin-top:8px}
+.hero .statement{max-width:600px}
+.hero-copy .name{margin-bottom:-12px}
 .book-note{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;margin-top:12px;padding-top:28px;box-shadow:inset 0 3px 0 var(--night)}
 .book-note p{flex:1 1 220px;font:400 19px/1.45 var(--serif);color:var(--text-2)}
 .book-note em{color:var(--night);font-style:italic}
@@ -193,7 +194,7 @@ section{padding-block:clamp(80px,10vw,150px)}
 /* speaking: the one gold field */
 .speak{background:var(--gold);color:var(--night);padding-block:clamp(64px,8vw,110px)}
 .speak-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px clamp(32px,6vw,96px);align-items:start}
-.speak .h2{font:900 clamp(52px,6.6vw,104px)/.88 var(--grot);font-stretch:62%;text-transform:uppercase}
+.speak .h2{font:500 clamp(40px,4.6vw,68px)/1 var(--serif);letter-spacing:-.015em}
 .speak .body-serif{color:var(--night)}
 .topics{list-style:none;margin:20px 0 28px;padding:0;display:flex;flex-direction:column;gap:14px}
 .topics li{font:500 clamp(21px,1.8vw,25px)/1.3 var(--serif)}
@@ -223,12 +224,12 @@ section{padding-block:clamp(80px,10vw,150px)}
 .foot{background:var(--storm);color:var(--on-dark);padding-block:64px 32px;overflow:hidden}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 32px;font:600 17px var(--grot);font-stretch:85%}
 .foot-links a{text-decoration:none;padding-block:8px} .foot-links a:hover{text-decoration:underline;text-decoration-color:var(--orange)}
-.foot-name{margin-top:40px;font:900 clamp(56px,13.2vw,200px)/.82 var(--grot);font-stretch:62%;text-transform:uppercase;color:var(--fog);white-space:nowrap;letter-spacing:-.01em}
+.foot-name{margin-top:40px;font:400 clamp(48px,10vw,150px)/.95 var(--serif);color:var(--fog);white-space:nowrap;letter-spacing:-.02em}
 .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font:500 14px var(--grot);color:var(--on-dark-2)}
 
 /* writing archive */
 .page-head{padding-block:clamp(56px,8vw,110px) 36px}
-.page-head .name{font-size:clamp(64px,9vw,148px)}
+.page-head .name{font-size:clamp(52px,6.4vw,96px)}
 .page-head .statement{margin-top:24px;max-width:720px}
 .tools{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;margin-top:36px}
 .filters{display:flex;flex-wrap:wrap;gap:8px}
@@ -330,7 +331,7 @@ section{padding-block:clamp(80px,10vw,150px)}
     <img src="assets/portrait.jpg" alt="Randall Hartman in white-framed glasses, looking at the camera, black and white">
   </figure>
   <div class="hero-copy">
-    <h1 class="name">Randall<br>Hartman</h1>
+    <h1 class="name">Randall Hartman</h1>
     <p class="roles">Writer <span>·</span> Author <span>·</span> Former Pastor</p>
     <p class="statement">Forty years in the pulpit taught me to fear God. Now I write about the God I found instead, and the people I was taught to keep at a distance.</p>
     <div class="book-note">
@@ -586,7 +587,7 @@ section{padding-block:clamp(80px,10vw,150px)}
   <section class="hero" style="padding:0">
     <figure class="hero-photo" style="margin:0"><img src="assets/portrait_corduroy.jpg" alt="Randall Hartman in a corduroy jacket and bow tie, black and white" style="object-position:50% 12%"></figure>
     <div class="hero-copy">
-      <h1 class="name">About<br>Randall</h1>
+      <h1 class="name">About Randall</h1>
       <p class="statement">Nearly five decades in ministry. These days he writes, speaks, and keeps asking the questions he was once told not to ask.</p>
     </div>
   </section>
