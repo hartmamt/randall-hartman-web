@@ -99,9 +99,9 @@ section{padding-block:clamp(80px,10vw,150px)}
 .lines{list-style:none;margin:28px 0 0;padding:0}
 .lines li{width:fit-content;max-width:100%}
 .lines button{position:relative;display:block;max-width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:#8E999E;font:900 clamp(52px,9.6vw,156px)/.94 var(--grot);font-stretch:62%;text-transform:uppercase;letter-spacing:-.005em}
-.lines button span{background:linear-gradient(var(--orange),var(--orange)) 0 54%/100% .16em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .7s cubic-bezier(.6,0,.2,1)}
+.lines button span{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:.14em;text-decoration-skip-ink:none;transition:text-decoration-color .5s ease,color .5s ease}
 .lines button[aria-pressed="false"]{color:var(--on-dark)}
-.lines button[aria-pressed="false"] span{background-size:0% .16em}
+.lines button[aria-pressed="false"] span{text-decoration-color:transparent}
 .lines li.final{margin-top:.2em;color:var(--gold);font:italic 400 clamp(64px,11vw,184px)/1 var(--serif);letter-spacing:-.02em}
 .strike-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px clamp(32px,6vw,96px);margin-top:clamp(56px,7vw,96px);align-items:end}
 .strike-foot .statement{color:var(--on-dark)}
