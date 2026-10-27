@@ -1,0 +1,343 @@
+/*
+ * Randall Hartman: the few things theme.json cannot say.
+ * Colours, fonts and sizes come from theme.json presets (--wp--preset--*).
+ */
+
+:root {
+	--rh-night: var(--wp--preset--color--night);
+	--rh-storm: var(--wp--preset--color--storm);
+	--rh-slate: var(--wp--preset--color--slate);
+	--rh-ink-soft: var(--wp--preset--color--ink-soft);
+	--rh-fog: var(--wp--preset--color--fog);
+	--rh-mist: var(--wp--preset--color--mist);
+	--rh-paper: var(--wp--preset--color--paper);
+	--rh-on-dark-soft: var(--wp--preset--color--on-dark-soft);
+	--rh-gold: var(--wp--preset--color--gold);
+	--rh-orange: var(--wp--preset--color--orange);
+	--rh-sans: var(--wp--preset--font-family--sans);
+	--rh-serif: var(--wp--preset--font-family--serif);
+	--rh-gutter: max(16px, 3.2vw);
+	--rh-section: var(--wp--preset--spacing--70);
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { height: auto; }
+
+/* Links: an orange underline that darkens on hover. */
+a { text-decoration-color: var(--rh-orange); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+a:hover { text-decoration-color: currentColor; }
+:focus-visible { outline: 3px solid var(--rh-orange); outline-offset: 3px; }
+:where(h1, h2, h3) { text-wrap: balance; }
+
+/* Sections sit flush; spacing comes from each section's own padding. */
+.wp-site-blocks > * { margin-block: 0; }
+main.wp-block-group > .alignfull { margin-block: 0; }
+
+/* Shared type helpers (class names set in the patterns) */
+.rh-sans { font-family: var(--rh-sans); }
+.rh-condensed { font-family: var(--rh-sans); font-stretch: 85%; }
+.rh-roles { font-family: var(--rh-sans); font-stretch: 85%; font-weight: 700; color: var(--rh-slate); letter-spacing: .01em; }
+.rh-small, .rh-fine { font-family: var(--rh-sans); font-size: 16px; line-height: 1.5; font-weight: 500; }
+.rh-kicker { font-family: var(--rh-sans); font-stretch: 85%; font-weight: 700; font-size: 17px; }
+.is-style-poster,
+.rh-poster {
+	font-family: var(--rh-sans) !important;
+	font-weight: 900 !important;
+	font-stretch: 62%;
+	text-transform: uppercase;
+	line-height: .86 !important;
+	letter-spacing: -.005em;
+}
+.is-style-poster { font-size: clamp(56px, 9.6vw, 156px); }
+
+/* Buttons */
+.wp-element-button, .wp-block-button__link { font-stretch: 85%; min-height: 52px; display: inline-flex; align-items: center; justify-content: center; transition: background-color .2s, transform .15s; }
+.wp-block-button__link:active { transform: translateY(1px); }
+.wp-block-button.is-style-text-link .wp-block-button__link {
+	background: none !important;
+	color: inherit !important;
+	padding: 14px 0;
+	min-height: 0;
+	text-decoration: underline;
+	text-decoration-color: var(--rh-orange);
+	text-decoration-thickness: 3px;
+	text-underline-offset: 6px;
+}
+.wp-block-button.is-style-text-link .wp-block-button__link:hover { text-decoration-color: currentColor; }
+.wp-block-buttons { row-gap: 12px; column-gap: 28px; align-items: center; }
+
+/* Announcement bar + sticky header */
+.rh-announce { text-align: center; }
+.rh-announce em { font-family: var(--rh-serif); font-size: 17px; }
+.rh-announce a { color: var(--rh-gold); font-weight: 800; }
+.wp-site-blocks > header.wp-block-template-part {
+	position: sticky;
+	top: var(--wp-admin--admin-bar--height, 0px);
+	z-index: 50;
+}
+.rh-header { min-height: 70px; }
+.rh-header .wp-block-site-title a { color: var(--rh-night); }
+.rh-header .wp-block-navigation { font-stretch: 85%; gap: 30px; }
+.rh-header .wp-block-navigation-item__content { padding-block: 12px; text-decoration: none; }
+.rh-header .wp-block-navigation-item__content:hover,
+.rh-header .current-menu-item > .wp-block-navigation-item__content {
+	text-decoration: underline;
+	text-decoration-color: var(--rh-orange);
+	text-decoration-thickness: 3px;
+	text-underline-offset: 8px;
+}
+.rh-header .wp-block-button__link { min-height: 44px; padding: 0 18px; }
+.rh-header .wp-block-site-title { flex-shrink: 0; }
+.rh-header .wp-block-navigation { align-items: center; }
+.rh-header .rh-nav-subscribe { display: none; }
+.rh-header .is-menu-open .rh-nav-subscribe { display: block; }
+@media (max-width: 599px) {
+	.rh-header .wp-block-navigation__responsive-container-open { display: flex; align-items: center; }
+	.rh-header .wp-block-buttons { display: none; }
+	.rh-header .wp-block-site-title { font-size: 22px !important; }
+}
+.rh-header .wp-block-navigation__responsive-container-open {
+	background: var(--rh-night); color: var(--rh-paper); min-height: 44px; padding: 0 14px;
+	font: 700 15px var(--rh-sans);
+}
+.rh-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content { font-size: 22px; }
+
+/* Full-bleed photographs that fill their column */
+.rh-fill { position: relative; margin: 0; overflow: hidden; min-height: 100%; background: var(--rh-fog); }
+.rh-fill img { position: absolute; inset: 0; width: 100%; height: 100% !important; object-fit: cover; object-position: 40% 30%; }
+.rh-fill figcaption {
+	position: absolute; left: 0; bottom: 0; margin: 0;
+	padding: 10px 16px 0 var(--rh-gutter);
+	background: inherit; color: inherit;
+}
+.rh-fill.rh-top img { object-position: 50% 12%; }
+.rh-hero .rh-fill figcaption, .rh-fill.rh-on-paper figcaption { background: var(--rh-paper); color: var(--rh-ink-soft); }
+.rh-fill.rh-on-night figcaption { background: var(--rh-night); color: var(--rh-on-dark-soft); }
+
+/* Hero: photo bleeds off the left, name beside it */
+.rh-hero, .rh-notebook { padding: 0 !important; }
+.rh-hero { gap: 0 !important; margin-block: 0; }
+.rh-hero > .wp-block-column { min-width: 0; }
+.rh-hero .rh-hero-copy {
+	padding: clamp(36px, 4.5vw, 72px) var(--rh-gutter) clamp(40px, 5vw, 80px) clamp(32px, 5vw, 88px);
+	display: flex; flex-direction: column; gap: 22px; justify-content: center;
+}
+.rh-hero .rh-hero-copy > * { margin: 0; max-width: 600px; }
+.rh-hero .rh-hero-copy > h1 { margin-bottom: -12px; }
+.rh-book-note { padding-top: 22px; box-shadow: inset 0 3px 0 var(--rh-night); gap: 16px 28px !important; }
+.rh-book-note > p { flex: 1 1 220px; font-size: 19px; line-height: 1.45; }
+@media (max-width: 781px) {
+	.rh-hero .rh-hero-copy { order: -1; padding-left: var(--rh-gutter); padding-right: var(--rh-gutter); }
+	.rh-hero .rh-photo-col { aspect-ratio: 16 / 11; }
+}
+@media (min-width: 782px) {
+	.rh-hero .rh-photo-col { min-height: 560px; }
+}
+
+/* Book band: slow gold rays behind a "cover coming soon" card */
+.rh-book { position: relative; overflow: hidden; isolation: isolate; }
+.rh-book::before {
+	content: ""; position: absolute; z-index: -1; left: 28%; top: 50%;
+	width: 200vmax; height: 200vmax; border-radius: 50%; pointer-events: none;
+	transform: translate(-50%, -50%);
+	background: repeating-conic-gradient(from 0deg, rgba(246, 185, 14, .13) 0 6deg, transparent 6deg 15deg);
+	-webkit-mask-image: radial-gradient(circle, #000 6%, transparent 52%);
+	mask-image: radial-gradient(circle, #000 6%, transparent 52%);
+	animation: rh-spin 140s linear infinite;
+}
+@keyframes rh-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.rh-book-title { text-transform: uppercase; letter-spacing: .01em !important; line-height: .86 !important; }
+.rh-endorse { margin-block: 40px 36px !important; }
+.rh-book .wp-block-column > p.has-on-dark-soft-color { max-width: 620px; }
+.rh-hero .rh-hero-copy > p:not(.rh-roles) { max-width: 560px; }
+.rh-endorse .wp-block-quote { margin: 0; padding: 2px 0 2px 22px; border-left-width: 3px; font-size: clamp(20px, 1.5vw, 22px); line-height: 1.45; }
+.rh-endorse .wp-block-quote > p { margin: 0; }
+.rh-endorsement cite { display: block; margin-top: 12px; line-height: 1.45; font-weight: 400 !important; font-size: 15px !important; }
+.rh-endorsement cite strong { font-weight: 700; font-size: 16px; }
+
+.rh-tilt { perspective: 1200px; --rx: 0deg; --ry: -12deg; position: relative; max-width: 400px; }
+.rh-tilt > .rh-soon { transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .15s ease-out; box-shadow: 24px 30px 70px rgba(0, 0, 0, .6); }
+.rh-soon {
+	aspect-ratio: 2 / 3; padding: 12% 10% !important;
+	display: flex; flex-direction: column; justify-content: space-between;
+}
+.rh-soon > * { margin: 0 !important; }
+.rh-soon .rh-soon-label { align-self: flex-start; padding: 10px 12px; font: 800 15px/1.3 var(--rh-sans); font-stretch: 85%; }
+.rh-note {
+	position: absolute; right: -14px; top: -18px; margin: 0;
+	padding: 10px 14px; transform: rotate(8deg);
+	font: 900 26px/1 var(--rh-sans); font-stretch: 62%; text-transform: uppercase;
+	box-shadow: 3px 4px 0 rgba(0, 0, 0, .35);
+}
+@media (max-width: 781px) { .rh-tilt { max-width: min(260px, 72%); } }
+
+/* "What I was taught": lines crossed out in path orange */
+.is-style-struck { list-style: none; padding: 0; margin: 28px 0 0; }
+.is-style-struck li {
+	width: fit-content; max-width: 100%;
+	font: 900 clamp(46px, 9.6vw, 156px)/.94 var(--rh-sans); font-stretch: 62%;
+	text-transform: uppercase; letter-spacing: -.005em;
+	color: var(--rh-fog);
+	text-decoration: line-through; text-decoration-color: var(--rh-orange);
+	text-decoration-thickness: .09em; text-decoration-skip-ink: none;
+	transition: text-decoration-color .5s ease, color .5s ease;
+}
+.is-style-struck li.is-clear { color: var(--rh-paper); text-decoration-color: transparent; }
+.is-style-struck button {
+	all: unset; display: block; max-width: 100%; cursor: pointer;
+	-webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.is-style-struck button:focus-visible { outline: 3px solid var(--rh-orange); outline-offset: 3px; }
+.rh-struck-hint { display: none; }
+.rh-js .rh-struck-hint { display: block; }
+.rh-came { margin-top: clamp(40px, 5vw, 72px) !important; }
+.rh-final { line-height: 1 !important; letter-spacing: -.02em; font-size: clamp(54px, 11vw, 184px) !important; margin-top: .1em !important; }
+
+/* Questions welcome */
+.rh-q-grid { counter-reset: q; }
+.rh-q { counter-increment: q; position: relative; padding: 24px 0 0 clamp(64px, 6vw, 88px); box-shadow: inset 0 3px 0 var(--rh-night); }
+.rh-q::before {
+	content: counter(q, decimal-leading-zero);
+	position: absolute; left: 0; top: 24px;
+	font: 900 clamp(44px, 4.4vw, 64px)/.85 var(--rh-sans); font-stretch: 62%;
+	color: var(--rh-orange);
+}
+.rh-q > * { margin: 0 !important; }
+.rh-q .rh-q-links { margin-top: 12px !important; display: flex; flex-direction: column; gap: 2px; }
+.rh-q .rh-q-links > p { margin: 0 !important; }
+.rh-q .rh-q-links p { font: 500 18px/1.4 var(--rh-sans); }
+.rh-q .rh-q-links a { display: inline-block; padding-block: 6px; }
+
+/* Writing lists: big condensed dates do the work numbers would */
+.rh-posts .wp-block-post-template { margin: 0; }
+.rh-post {
+	display: grid !important; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+	gap: 8px 40px; padding: 30px 0; box-shadow: inset 0 2px 0 var(--rh-fog);
+}
+.rh-post > * { margin: 0 !important; }
+.rh-post-date { display: block; }
+.rh-post-date .wp-block-post-date:first-child {
+	font: 900 clamp(36px, 4vw, 58px)/.9 var(--rh-sans); font-stretch: 62%;
+	text-transform: uppercase; color: var(--rh-slate);
+}
+.rh-post-date .wp-block-post-date + .wp-block-post-date { margin-top: 6px; color: var(--rh-ink-soft); font-weight: 600; }
+.rh-post .wp-block-post-title { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.15; }
+.rh-post .wp-block-post-title a { text-decoration: none; }
+.rh-post .wp-block-post-title a:hover { text-decoration: underline; text-decoration-color: var(--rh-orange); }
+.rh-post .wp-block-post-excerpt { margin-top: 8px; max-width: 640px; color: var(--rh-ink-soft); font-size: 20px; line-height: 1.5; }
+.rh-post .wp-block-post-excerpt__excerpt { margin: 0; }
+.rh-post:hover .rh-post-date .wp-block-post-date:first-child { color: var(--rh-night); }
+.rh-posts.rh-lead li:first-child .wp-block-post-title { font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; }
+@media (max-width: 640px) {
+	.rh-post { grid-template-columns: 1fr; }
+	.rh-post-date { display: flex; align-items: baseline; gap: 10px; }
+	.rh-post-date .wp-block-post-date + .wp-block-post-date { margin-top: 0; }
+}
+.wp-block-query-pagination { gap: 8px; margin-top: 40px; }
+.wp-block-query-pagination-numbers { display: flex; flex-wrap: wrap; gap: 8px; }
+.wp-block-query-pagination-numbers .page-numbers {
+	display: inline-flex; min-width: 44px; height: 44px; align-items: center; justify-content: center;
+	background: var(--rh-paper); text-decoration: none;
+}
+.wp-block-query-pagination-numbers .page-numbers.current { background: var(--rh-night); color: var(--rh-paper); }
+.wp-block-query-pagination-numbers .page-numbers.dots { background: none; }
+.wp-block-query-pagination a.wp-block-query-pagination-next,
+.wp-block-query-pagination a.wp-block-query-pagination-previous {
+	padding-block: 12px; text-decoration-thickness: 3px; text-underline-offset: 6px; font-stretch: 85%; font-weight: 700;
+}
+
+/* Search box */
+.wp-block-search__label { font: 600 15px var(--rh-sans); }
+.wp-block-search__inside-wrapper { border: 0 !important; padding: 0 !important; max-width: 460px; }
+.wp-block-search__input { height: 54px; border: 0; border-radius: 0; padding: 0 14px; font: 400 18px var(--rh-sans); background: var(--rh-paper); color: var(--rh-night); }
+.wp-block-search__button { margin: 0 !important; height: 54px; border: 0; border-radius: 0; padding: 0 18px !important; background: var(--rh-night) !important; color: var(--rh-paper) !important; font: 700 16px var(--rh-sans); }
+
+/* Notebook quote */
+.is-style-notebook.wp-block-quote { border: 0; padding: 0; margin: 0; font-size: clamp(36px, 4.8vw, 76px); line-height: 1.06; letter-spacing: -.01em; color: var(--rh-gold); }
+.rh-notebook { gap: 0 !important; margin-block: 0; }
+.rh-notebook .rh-notebook-copy {
+	display: flex; flex-direction: column; justify-content: center; gap: 28px;
+	padding: clamp(72px, 9vw, 140px) var(--rh-gutter) clamp(72px, 9vw, 140px) clamp(32px, 6vw, 104px);
+}
+.rh-notebook .rh-notebook-copy > * { margin: 0; }
+.rh-notebook .rh-fill { min-height: 560px; }
+.rh-notebook .rh-fill img { object-position: 50% 40%; }
+@media (max-width: 781px) {
+	.rh-notebook .rh-fill { min-height: 0; aspect-ratio: 4 / 5; }
+	.rh-notebook .rh-notebook-copy { padding-left: var(--rh-gutter); padding-right: var(--rh-gutter); }
+}
+@media (prefers-reduced-motion: no-preference) {
+	@supports (animation-timeline: view()) {
+		.rh-drift img { animation: rh-drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+		@keyframes rh-drift { from { transform: scale(1.08) translateY(-3%); } to { transform: scale(1.08) translateY(3%); } }
+	}
+}
+
+/* About facts / timeline */
+.rh-timeline { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 22px; }
+.rh-timeline li { position: relative; padding-left: 140px; min-height: 34px; font-size: 19px; line-height: 1.5; color: var(--rh-ink-soft); }
+.rh-timeline li > strong:first-child { position: absolute; left: 0; top: .1em; font: 900 30px/1 var(--rh-sans); font-stretch: 62%; text-transform: uppercase; color: var(--rh-slate); }
+@media (max-width: 560px) {
+	.rh-timeline li { padding-left: 0; }
+	.rh-timeline li > strong:first-child { position: static; display: block; margin-bottom: 4px; }
+}
+.rh-topics li { margin-bottom: 14px; }
+
+/* Signup boxes */
+.rh-fine { font-weight: 400; }
+.rh-endbox .wp-block-heading em { font-style: italic; }
+
+/* Single essay */
+.rh-essay-head { padding-top: clamp(56px, 8vw, 100px); }
+.rh-byline { gap: 14px; font: 500 16px/1.4 var(--rh-sans); color: var(--rh-ink-soft); }
+.rh-byline > * { margin: 0; }
+.rh-byline .wp-block-image img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: 45% 30%; }
+.rh-prose { font-size: clamp(20px, 1.5vw, 22px); line-height: 1.7; }
+.rh-prose > p { margin-block: 0 1.1em; }
+.rh-prose > h2 { font-size: 1.4em; line-height: 1.2; font-weight: 500; margin-top: 1.6em; }
+.rh-prose > h3 { font-size: 1.2em; margin-top: 1.4em; }
+.rh-prose img { max-width: 100%; height: auto; }
+.rh-prose .aligncenter { margin-inline: auto; display: block; }
+.rh-prose .alignleft { float: left; margin: .3em 1.4em 1em 0; max-width: 50%; }
+.rh-prose .alignright { float: right; margin: .3em 0 1em 1.4em; max-width: 50%; }
+.rh-prose::after { content: ""; display: table; clear: both; }
+.rh-prose .wp-caption { max-width: 100%; }
+.rh-prose .wp-caption-text { font: 500 15px var(--rh-sans); color: var(--rh-ink-soft); margin-top: 8px; }
+/* Text pasted from Medium, Hemingway and Draft.js left spans and classes behind; keep them plain. */
+.rh-prose span[class] { background: none !important; color: inherit !important; font: inherit !important; }
+.rh-prose iframe { max-width: 100%; }
+.rh-prose .wp-block-embed iframe, .rh-prose iframe[src*="youtube"] { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.rh-tags .wp-block-post-terms__separator { display: none; }
+.rh-tags a {
+	display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; margin: 0 8px 8px 0;
+	background: var(--rh-mist); text-decoration: none;
+}
+.rh-tags a:hover { background: var(--rh-fog); }
+.rh-author { display: grid !important; grid-template-columns: 88px minmax(0, 1fr); gap: 20px; align-items: center; }
+.rh-author > * { margin: 0 !important; }
+.rh-author img { width: 88px; height: 88px; object-fit: cover; object-position: 45% 30%; }
+
+/* Footer: the name returns at full width */
+.rh-footer { overflow: hidden; }
+.rh-footer .wp-block-navigation { font-stretch: 85%; column-gap: 32px; row-gap: 8px; }
+.rh-footer .wp-block-navigation-item__content { padding-block: 8px; text-decoration: none; }
+.rh-footer .wp-block-navigation-item__content:hover { text-decoration: underline; text-decoration-color: var(--rh-orange); }
+.rh-foot-name { white-space: nowrap; letter-spacing: -.02em; line-height: .95 !important; font-size: clamp(44px, 10.4vw, 150px) !important; }
+.rh-foot-base a { color: var(--rh-on-dark-soft); text-decoration-color: var(--rh-slate); }
+
+/* Narrow phones (iPhone SE) */
+@media (max-width: 420px) {
+	.is-style-struck li { font-size: clamp(38px, 12.4vw, 52px); }
+	.is-style-poster, .rh-poster { font-size: clamp(50px, 15vw, 64px) !important; }
+	.rh-final { font-size: clamp(54px, 16vw, 64px) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.rh-book::before { animation: none; }
+	.rh-tilt > .rh-soon, .is-style-struck li { transition: none; }
+}
+
+/* Editor: show the struck list readably on the light canvas */
+.editor-styles-wrapper .is-style-struck li { color: inherit; }

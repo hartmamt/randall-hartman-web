@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Build the installable theme zip: Appearance > Themes > Add New > Upload Theme.
+# Usage: tools/build-zip.sh [output-dir]   (default: dist/)
+set -euo pipefail
+root="$(cd "$(dirname "$0")/.." && pwd)"
+out="${1:-$root/dist}"
+mkdir -p "$out"
+version="$(sed -n 's/^Version: *//p' "$root/theme/randall-hartman/style.css")"
+rm -f "$out/randall-hartman.zip"
+(cd "$root/theme" && zip -qr -X "$out/randall-hartman.zip" randall-hartman -x '*.DS_Store')
+echo "$out/randall-hartman.zip (version $version)"

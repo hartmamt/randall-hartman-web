@@ -1,0 +1,16 @@
+/*
+Theme Name: Randall Hartman
+Theme URI: https://www.randallhartman.com/
+Author: Matt Hartman
+Description: A block theme for randallhartman.com: Randall Hartman's writing, his memoir A God Awful God, and the questions he keeps asking. Built on core blocks only, so every page can be edited in the normal WordPress editor.
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: randall-hartman
+Tags: blog, one-column, block-patterns, full-site-editing, wide-blocks, editor-style
+*/
+
+/* Styles live in theme.json and assets/css/theme.css. */
