@@ -4,7 +4,7 @@
 # Run `tools/build-zip.sh playground` after theme changes: the Playground preview installs that copy.
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
-out="${1:-$root/dist}"
+out="$(mkdir -p "${1:-$root/dist}" && cd "${1:-$root/dist}" && pwd)"
 mkdir -p "$out"
 version="$(sed -n 's/^Version: *//p' "$root/theme/randall-hartman/style.css")"
 rm -f "$out/randall-hartman.zip"
