@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build the installable theme zip: Appearance > Themes > Add New > Upload Theme.
 # Usage: tools/build-zip.sh [output-dir]   (default: dist/)
+# Run `tools/build-zip.sh playground` after theme changes: the Playground preview installs that copy.
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 out="${1:-$root/dist}"

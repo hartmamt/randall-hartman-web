@@ -13,7 +13,7 @@ The WordPress block theme for randallhartman.com, and the design work behind it.
 ## Preview it in your browser
 
 Open the Playground link in the pull request (or load `playground/blueprint.json` at
-<https://playground.wordpress.net/>). It installs the theme from this branch, imports a
+<https://playground.wordpress.net/>). It installs the theme from `playground/randall-hartman.zip` on this branch (rebuild it with `tools/build-zip.sh playground` after theme changes), imports a
 snapshot of the live posts and pages, and applies the same settings as staging. Nothing is
 saved, and the live site is never touched. The admin login is automatic.
 
