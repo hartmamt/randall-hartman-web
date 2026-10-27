@@ -276,9 +276,12 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 
 /* About facts / timeline */
 .rh-timeline { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 22px; }
-.rh-timeline li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; font-size: 19px; line-height: 1.5; color: var(--rh-ink-soft); }
-.rh-timeline li strong { font: 900 30px/1 var(--rh-sans); font-stretch: 62%; text-transform: uppercase; color: var(--rh-slate); }
-@media (max-width: 560px) { .rh-timeline li { grid-template-columns: 1fr; gap: 4px; } }
+.rh-timeline li { position: relative; padding-left: 140px; min-height: 34px; font-size: 19px; line-height: 1.5; color: var(--rh-ink-soft); }
+.rh-timeline li > strong:first-child { position: absolute; left: 0; top: .1em; font: 900 30px/1 var(--rh-sans); font-stretch: 62%; text-transform: uppercase; color: var(--rh-slate); }
+@media (max-width: 560px) {
+	.rh-timeline li { padding-left: 0; }
+	.rh-timeline li > strong:first-child { position: static; display: block; margin-bottom: 4px; }
+}
 .rh-topics li { margin-bottom: 14px; }
 
 /* Signup boxes */
