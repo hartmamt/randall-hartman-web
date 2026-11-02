@@ -157,7 +157,9 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 .rh-endorsement cite strong { font-weight: 700; font-size: 16px; }
 
 .rh-tilt { perspective: 1200px; --rx: 0deg; --ry: -12deg; position: relative; max-width: 400px; }
-.rh-tilt > .rh-soon { transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .15s ease-out; box-shadow: 24px 30px 70px rgba(0, 0, 0, .6); }
+.rh-tilt > .rh-soon, .rh-tilt > .rh-cover { transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .15s ease-out; box-shadow: 24px 30px 70px rgba(0, 0, 0, .6); }
+.rh-tilt > .rh-cover { margin: 0; }
+.rh-cover img { display: block; width: 100%; height: auto; }
 .rh-soon {
 	aspect-ratio: 2 / 3; padding: 12% 10% !important;
 	display: flex; flex-direction: column; justify-content: space-between;
@@ -336,7 +338,7 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
 	.rh-book::before { animation: none; }
-	.rh-tilt > .rh-soon, .is-style-struck li { transition: none; }
+	.rh-tilt > .rh-soon, .rh-tilt > .rh-cover, .is-style-struck li { transition: none; }
 }
 
 /* Editor: show the struck list readably on the light canvas */

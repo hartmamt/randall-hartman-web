@@ -3,7 +3,7 @@ Contributors: hartmamt
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,9 @@ core WordPress blocks: every page, section and piece of writing is edited in the
 WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
+
+= 1.0.1 =
+* Show the real cover of A God Awful God on the home page and Book page.
 
 = 1.0.0 =
 * First release, translated from the approved Version E design.

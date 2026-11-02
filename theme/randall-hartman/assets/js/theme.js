@@ -48,7 +48,7 @@
 		} );
 	} );
 
-	// The "cover coming soon" card tilts toward the pointer.
+	// The book cover (or the "cover coming soon" card) tilts toward the pointer.
 	if ( ! reduce ) {
 		document.querySelectorAll( '.rh-tilt' ).forEach( function ( card ) {
 			card.addEventListener( 'pointermove', function ( e ) {

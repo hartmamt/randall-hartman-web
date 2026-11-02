@@ -3,7 +3,7 @@
  * Title: The book, with endorsements
  * Slug: randall-hartman/book-band
  * Categories: randall-hartman, call-to-action
- * Description: A God Awful God on a dark band with gold rays, the cover-coming-soon card, the two endorsements and the excerpt button.
+ * Description: A God Awful God on a dark band with gold rays, the book cover, the two endorsements and the excerpt button.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -13,7 +13,7 @@
 <!-- wp:group {"align":"full","className":"rh-book","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"backgroundColor":"storm","textColor":"paper","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <div class="wp-block-group alignfull rh-book has-paper-color has-storm-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"clamp(48px, 7vw, 112px)","top":"48px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"36%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:36%"><!-- wp:pattern {"slug":"randall-hartman/cover-coming-soon"} /--></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:36%"><!-- wp:pattern {"slug":"randall-hartman/book-cover"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"64%"} -->

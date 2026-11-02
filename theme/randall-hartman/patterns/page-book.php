@@ -15,7 +15,7 @@
 <!-- wp:group {"align":"full","className":"rh-book","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"storm","textColor":"paper","layout":{"type":"constrained","contentSize":"1240px"}} -->
 <div class="wp-block-group alignfull rh-book has-paper-color has-storm-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"clamp(48px, 7vw, 112px)","top":"48px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"36%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:36%"><!-- wp:pattern {"slug":"randall-hartman/cover-coming-soon"} /--></div>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:36%"><!-- wp:pattern {"slug":"randall-hartman/book-cover"} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"64%"} -->
