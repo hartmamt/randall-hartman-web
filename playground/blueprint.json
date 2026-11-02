@@ -1,0 +1,33 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "randallhartman.com block theme preview",
+		"description": "The Randall Hartman theme with a snapshot of his public posts and pages, so the theme can be clicked through before staging.",
+		"author": "hartmamt"
+	},
+	"landingPage": "/",
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hartmamt/randall-hartman-web",
+				"ref": "claude/project-thread-31i1gl",
+				"refType": "branch",
+				"path": "theme/randall-hartman"
+			},
+			"options": { "activate": true, "targetFolderName": "randall-hartman" }
+		},
+		{ "step": "mkdir", "path": "/tmp/rh" },
+		{ "step": "writeFile", "path": "/tmp/rh/posts.json", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/playground/content/posts.json" } },
+		{ "step": "writeFile", "path": "/tmp/rh/pages.json", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/playground/content/pages.json" } },
+		{ "step": "writeFile", "path": "/tmp/rh/categories.json", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/playground/content/categories.json" } },
+		{ "step": "writeFile", "path": "/tmp/rh/tags.json", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/playground/content/tags.json" } },
+		{ "step": "writeFile", "path": "/tmp/rh/import.php", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/tools/import-live-content.php" } },
+		{ "step": "writeFile", "path": "/tmp/rh/setup.php", "data": { "resource": "url", "url": "https://raw.githubusercontent.com/hartmamt/randall-hartman-web/claude/project-thread-31i1gl/tools/setup-test-site.php" } },
+		{ "step": "wp-cli", "command": "wp eval-file /tmp/rh/import.php /tmp/rh" },
+		{ "step": "wp-cli", "command": "wp eval-file /tmp/rh/setup.php" }
+	]
+}
