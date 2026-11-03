@@ -18,7 +18,7 @@
 
 <!-- wp:navigation-link {"label":"Writing","url":"/articles/","kind":"custom","isTopLevelLink":true} /-->
 
-<!-- wp:navigation-link {"label":"Speaking","url":"/about-me/#speaking","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Speaking","url":"/speaking/","kind":"custom","isTopLevelLink":true} /-->
 
 <!-- wp:navigation-link {"label":"Subscribe","url":"https://randall-hartman-kao4zj.subscribepage.io","kind":"custom","opensInNewTab":true,"isTopLevelLink":true} /-->
 <!-- /wp:navigation -->

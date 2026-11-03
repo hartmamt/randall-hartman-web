@@ -51,6 +51,21 @@ foreach ( array( 'about-me' => 'page-about', 'a-god-awful-god' => 'page-book' ) 
 	}
 }
 
+// The Speaking page, at /speaking/, built from its page pattern.
+$speaking_pattern = $patterns->get_registered( 'randall-hartman/page-speaking' );
+if ( $speaking_pattern && ! get_page_by_path( 'speaking' ) ) {
+	$speaking_id = wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_title'   => 'Speaking',
+			'post_name'    => 'speaking',
+			'post_content' => $speaking_pattern['content'],
+		)
+	);
+	update_post_meta( $speaking_id, '_wp_page_template', 'page-canvas' );
+}
+
 // A privacy page for the footer and signup links (wording still to be written with Randall).
 $privacy_id = (int) get_option( 'wp_page_for_privacy_policy' );
 if ( $privacy_id && get_post( $privacy_id ) ) {

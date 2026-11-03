@@ -19,8 +19,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"64%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"level":1,"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(54px, 8vw, 124px)","fontWeight":"500"}},"textColor":"paper"} -->
-<h1 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(54px, 8vw, 124px);font-weight:500">A God<br>Awful<br>God</h1>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"level":1,"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(40px, 4.6vw, 66px)","fontWeight":"500"}},"textColor":"paper"} -->
+<h1 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(40px, 4.6vw, 66px);font-weight:500">A God Awful God</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontSize":"clamp(22px, 2vw, 28px)","lineHeight":"1.3"},"spacing":{"margin":{"top":"14px"}}},"textColor":"gold"} -->
@@ -46,8 +46,8 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noreferrer noopener">Read the opening scene free</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"className":"is-style-text-link"} -->
-<div class="wp-block-button is-style-text-link"><a class="wp-block-button__link wp-element-button" href="#retailers">Pre-order</a></div>
+<!-- wp:button {"backgroundColor":"paper","textColor":"night"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="#retailers">Pre-order</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -78,7 +78,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"ink-soft"} -->
-<p class="has-ink-soft-color has-text-color">The Kindle edition can be pre-ordered now. Paperback and hardback arrive on launch day, December 8.</p>
+<p class="has-ink-soft-color has-text-color">Pre-orders open soon. The Kindle, paperback, and hardback editions all arrive on launch day, December 8.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->

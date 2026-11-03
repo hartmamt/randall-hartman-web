@@ -33,6 +33,7 @@ a:hover { text-decoration-color: currentColor; }
 /* Sections sit flush; spacing comes from each section's own padding. */
 .wp-site-blocks > * { margin-block: 0; }
 main.wp-block-group > .alignfull { margin-block: 0; }
+main.wp-block-group > .wp-block-post-content > .alignfull { margin-block: 0; }
 
 /* Shared type helpers (class names set in the patterns) */
 .rh-sans { font-family: var(--rh-sans); }
@@ -147,7 +148,7 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 	animation: rh-spin 140s linear infinite;
 }
 @keyframes rh-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
-.rh-book-title { text-transform: uppercase; letter-spacing: .01em !important; line-height: .86 !important; }
+.rh-book-title { text-transform: uppercase; letter-spacing: .01em !important; line-height: .95 !important; }
 .rh-endorse { margin-block: 40px 36px !important; }
 .rh-book .wp-block-column > p.has-on-dark-soft-color { max-width: 620px; }
 .rh-hero .rh-hero-copy > p:not(.rh-roles) { max-width: 560px; }
@@ -284,7 +285,6 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 	.rh-timeline li { padding-left: 0; }
 	.rh-timeline li > strong:first-child { position: static; display: block; margin-bottom: 4px; }
 }
-.rh-topics li { margin-bottom: 14px; }
 
 /* Signup boxes */
 .rh-fine { font-weight: 400; }
@@ -343,3 +343,22 @@ main.wp-block-group > .alignfull { margin-block: 0; }
 
 /* Editor: show the struck list readably on the light canvas */
 .editor-styles-wrapper .is-style-struck li { color: inherit; }
+
+/* Speaking */
+.rh-eyebrow {
+	display: flex; align-items: center; gap: 14px; margin: 0 0 20px;
+	font: 600 15px/1.2 var(--rh-serif); letter-spacing: .2em; text-transform: uppercase;
+	color: var(--wp--preset--color--burnt);
+}
+.rh-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; flex: none; }
+.rh-accent { color: var(--wp--preset--color--burnt); font-style: italic; }
+.rh-speak .wp-block-heading { line-height: 1.04; letter-spacing: -.015em; }
+.rh-venues { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.rh-venues li {
+	padding: 8px 18px; border: 1px solid var(--rh-fog); border-radius: 999px; background: #fff;
+	font: 500 16px/1.3 var(--rh-sans); color: var(--rh-ink-soft);
+}
+.rh-speak .rh-small { margin-top: 14px; }
+.rh-speak .rh-topics { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rh-fog); }
+.rh-speak .rh-topics li { margin: 0; padding: 26px 0; border-bottom: 1px solid var(--rh-fog); color: var(--rh-ink-soft); font-size: 19px; line-height: 1.5; }
+.rh-speak .rh-topics li > strong:first-child { display: block; margin-bottom: 6px; font-weight: 500; font-size: clamp(24px, 2vw, 30px); line-height: 1.2; color: var(--rh-night); }

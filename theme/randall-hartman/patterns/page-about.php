@@ -5,7 +5,7 @@
  * Categories: randall-hartman-pages
  * Post Types: page
  * Block Types: core/post-content
- * Description: Portrait, the long version of Randall's story, a short timeline and the speaking invitation. Use with the "Full width, no title" template.
+ * Description: Portrait, the long version of Randall's story, a short timeline and a link to the Speaking page. Use with the "Full width, no title" template.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -56,6 +56,10 @@
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"28px"}}}} -->
 <div class="wp-block-buttons" style="margin-top:28px"><!-- wp:button {"backgroundColor":"night","textColor":"paper"} -->
 <div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-night-background-color has-text-color has-background wp-element-button" href="/my-transition-story/">My transition story</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-text-link"} -->
+<div class="wp-block-button is-style-text-link"><a class="wp-block-button__link wp-element-button" href="/speaking/">Invite Randall to speak</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
@@ -89,7 +93,5 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
-
-<!-- wp:pattern {"slug":"randall-hartman/speaking"} /-->
 
 <!-- wp:pattern {"slug":"randall-hartman/newsletter"} /-->
