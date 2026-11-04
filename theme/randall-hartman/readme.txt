@@ -17,6 +17,10 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.4 =
+* Book band buttons sit centred under their endorsement columns.
+* The WPForms contact form uses the site's fonts and colours.
+
 = 1.0.3 =
 * Pre-order buttons go to the Amazon pre-order page.
 
