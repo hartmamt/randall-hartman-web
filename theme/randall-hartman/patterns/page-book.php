@@ -47,7 +47,7 @@
 <!-- /wp:button -->
 
 <!-- wp:button {"backgroundColor":"paper","textColor":"night"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="#retailers">Pre-order</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -78,20 +78,12 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"ink-soft"} -->
-<p class="has-ink-soft-color has-text-color">Pre-orders open soon. The Kindle, paperback, and hardback editions all arrive on launch day, December 8.</p>
+<p class="has-ink-soft-color has-text-color">Pre-orders are open now on Amazon. The book arrives on launch day, December 8.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#retailers">Pre-order on Kindle</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"backgroundColor":"night","textColor":"paper"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-night-background-color has-text-color has-background wp-element-button" href="#retailers">Paperback</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"backgroundColor":"night","textColor":"paper"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-night-background-color has-text-color has-background wp-element-button" href="#retailers">Hardback</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

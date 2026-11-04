@@ -3,7 +3,7 @@
  * Title: The book, with endorsements
  * Slug: randall-hartman/book-band
  * Categories: randall-hartman, call-to-action
- * Description: A God Awful God on a dark band with gold rays, the book cover, the two endorsements, the excerpt button and a pre-order button that goes to the Book page.
+ * Description: A God Awful God on a dark band with gold rays, the book cover, the two endorsements, the excerpt button and a pre-order button to Amazon.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -45,7 +45,7 @@
 <!-- /wp:button -->
 
 <!-- wp:button {"backgroundColor":"paper","textColor":"night"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="/a-god-awful-god/#retailers">Pre-order</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-text-link"} -->

@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.3 =
+* Pre-order buttons go to the Amazon pre-order page.
+
 = 1.0.2 =
 * New Speaking page pattern; every Speaking link now goes to /speaking/.
 * Book title on the home page and Book page is smaller, the Dec 8 sticker is gone from the cover, and both have a Pre-order button.
