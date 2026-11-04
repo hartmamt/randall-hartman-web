@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.5 =
+* Book page: drop the "Reserve your copy" section; pre-order lives in the top section.
+
 = 1.0.4 =
 * Book band buttons sit centred under their endorsement columns.
 * The WPForms contact form uses the site's fonts and colours.

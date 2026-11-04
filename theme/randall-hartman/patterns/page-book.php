@@ -5,7 +5,7 @@
  * Categories: randall-hartman-pages
  * Post Types: page
  * Block Types: core/post-content
- * Description: The book with full endorsements, the free excerpt, and where to buy. Use with the "Full width, no title" template.
+ * Description: The book with full endorsements, the free excerpt, and a pre-order button. Use with the "Full width, no title" template.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -70,20 +70,4 @@
 <div class="wp-block-column is-vertically-aligned-bottom"><!-- wp:pattern {"slug":"randall-hartman/signup-button"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"align":"full","anchor":"retailers","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div id="retailers" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading -->
-<h2 class="wp-block-heading">Reserve your copy</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"ink-soft"} -->
-<p class="has-ink-soft-color has-text-color">Pre-orders are open now on Amazon. The book arrives on launch day, December 8.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
 <!-- /wp:group -->
