@@ -23,6 +23,7 @@
 				{ "slug": "on-dark-soft", "name": "Soft light (text on dark)", "color": "#CBD3D7" },
 				{ "slug": "gold", "name": "Doorway gold", "color": "#F6B90E" },
 				{ "slug": "orange", "name": "Path orange", "color": "#E08322" },
+				{ "slug": "burnt", "name": "Burnt orange", "color": "#C66019" },
 				{ "slug": "orange-light", "name": "Path orange, light", "color": "#EB9536" }
 			]
 		},

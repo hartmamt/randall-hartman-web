@@ -18,9 +18,11 @@
 
 <!-- wp:navigation-link {"label":"Writing","url":"/articles/","kind":"custom","isTopLevelLink":true} /-->
 
-<!-- wp:navigation-link {"label":"Speaking","url":"/about-me/#speaking","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Speaking","url":"/speaking/","kind":"custom","isTopLevelLink":true} /-->
 
-<!-- wp:navigation-link {"label":"Subscribe","url":"https://randall-hartman-kao4zj.subscribepage.io","kind":"custom","opensInNewTab":true,"isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Contact","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
+
+<!-- wp:navigation-link {"label":"Subscribe","url":"/subscribe/","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:paragraph {"className":"rh-foot-name","style":{"spacing":{"margin":{"top":"40px"}},"typography":{"fontWeight":"400"}},"textColor":"fog","fontFamily":"serif"} -->
@@ -33,7 +35,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="/privacy-policy/">Privacy policy</a> · <a href="/contact/">Contact</a></p>
+<p><a href="/privacy-policy/">Privacy policy</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

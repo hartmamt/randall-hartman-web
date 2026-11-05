@@ -5,7 +5,7 @@
  * Categories: randall-hartman-pages
  * Post Types: page
  * Block Types: core/post-content
- * Description: The book with full endorsements, the free excerpt, and where to buy. Use with the "Full width, no title" template.
+ * Description: The book with full endorsements, the free excerpt, and a pre-order button. Use with the "Full width, no title" template.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -19,8 +19,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"64%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"level":1,"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(54px, 8vw, 124px)","fontWeight":"500"}},"textColor":"paper"} -->
-<h1 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(54px, 8vw, 124px);font-weight:500">A God<br>Awful<br>God</h1>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"level":1,"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(40px, 4.6vw, 66px)","fontWeight":"500"}},"textColor":"paper"} -->
+<h1 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(40px, 4.6vw, 66px);font-weight:500">A God Awful God</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontSize":"clamp(22px, 2vw, 28px)","lineHeight":"1.3"},"spacing":{"margin":{"top":"14px"}}},"textColor":"gold"} -->
@@ -46,8 +46,8 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noreferrer noopener">Read the opening scene free</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"className":"is-style-text-link"} -->
-<div class="wp-block-button is-style-text-link"><a class="wp-block-button__link wp-element-button" href="#retailers">Pre-order</a></div>
+<!-- wp:button {"backgroundColor":"paper","textColor":"night"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -70,28 +70,4 @@
 <div class="wp-block-column is-vertically-aligned-bottom"><!-- wp:pattern {"slug":"randall-hartman/signup-button"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"align":"full","anchor":"retailers","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div id="retailers" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading -->
-<h2 class="wp-block-heading">Reserve your copy</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"ink-soft"} -->
-<p class="has-ink-soft-color has-text-color">The Kindle edition can be pre-ordered now. Paperback and hardback arrive on launch day, December 8.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#retailers">Pre-order on Kindle</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"backgroundColor":"night","textColor":"paper"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-night-background-color has-text-color has-background wp-element-button" href="#retailers">Paperback</a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"backgroundColor":"night","textColor":"paper"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-paper-color has-night-background-color has-text-color has-background wp-element-button" href="#retailers">Hardback</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
 <!-- /wp:group -->

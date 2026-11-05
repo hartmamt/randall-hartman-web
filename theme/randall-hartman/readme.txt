@@ -17,6 +17,37 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.10 =
+* Subscribe buttons (header, mobile menu, footer) open the new /subscribe/ page with the MailerLite "Stay Informed" form. New "Subscribe page" pattern.
+
+= 1.0.9 =
+* New mobile menu: dark full-screen overlay with large serif links and an orange Subscribe button. Menu folds up below 960px.
+
+= 1.0.8 =
+* MailerLite form button in site orange.
+
+= 1.0.7 =
+* Each piece of writing ends with the MailerLite "Stay Informed" form instead of the dark subscribe box.
+
+= 1.0.6 =
+* Contact in the header and footer menus.
+* End-of-piece box asks readers who liked the piece to subscribe.
+* Old [mailerlite_form] shortcodes show a Subscribe button.
+
+= 1.0.5 =
+* Book page: drop the "Reserve your copy" section; pre-order lives in the top section.
+
+= 1.0.4 =
+* Book band buttons sit centred under their endorsement columns.
+* The WPForms contact form uses the site's fonts and colours.
+
+= 1.0.3 =
+* Pre-order buttons go to the Amazon pre-order page.
+
+= 1.0.2 =
+* New Speaking page pattern; every Speaking link now goes to /speaking/.
+* Book title on the home page and Book page is smaller, the Dec 8 sticker is gone from the cover, and both have a Pre-order button.
+
 = 1.0.1 =
 * Show the real cover of A God Awful God on the home page and Book page.
 

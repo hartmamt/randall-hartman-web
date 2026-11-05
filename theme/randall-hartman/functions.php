@@ -119,3 +119,74 @@ add_filter( 'excerpt_more', 'randall_hartman_excerpt_more' );
 function randall_hartman_excerpt_more() {
 	return '…';
 }
+
+/**
+ * MailerLite embedded signup form (account 2515608, form uSJAmM).
+ * The universal script loads once per page; the MailerLite plugin adds the same
+ * script when it is active, so ours steps aside if window.ml already exists.
+ */
+function randall_hartman_mailerlite_embed() {
+	return '<div class="rh-ml-form"><div class="ml-embedded" data-form="uSJAmM"></div></div>';
+}
+
+/**
+ * Pages that show the MailerLite form: every single post (the form is added
+ * at the end), plus any page whose content holds the form or its shortcode,
+ * such as /subscribe/.
+ */
+function randall_hartman_needs_mailerlite() {
+	if ( is_singular( 'post' ) ) {
+		return true;
+	}
+	if ( ! is_singular() ) {
+		return false;
+	}
+	$content = (string) get_post_field( 'post_content', get_queried_object_id() );
+	return false !== strpos( $content, 'ml-embedded' ) || has_shortcode( $content, 'mailerlite_form' );
+}
+
+add_action( 'wp_head', 'randall_hartman_mailerlite_universal', 20 );
+function randall_hartman_mailerlite_universal() {
+	if ( ! randall_hartman_needs_mailerlite() ) {
+		return;
+	}
+	?>
+<!-- MailerLite Universal -->
+<script>
+if ( ! window.ml ) {
+	(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+	.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+	n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+	(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+	ml('account', '2515608');
+}
+</script>
+<!-- End MailerLite Universal -->
+	<?php
+}
+
+/**
+ * Old posts say "join my email list below" and end with [mailerlite_form …]
+ * from the old theme. Show the MailerLite form there instead, whether or not
+ * the MailerLite plugin is active.
+ */
+add_action( 'init', 'randall_hartman_mailerlite_shortcode', 99 );
+function randall_hartman_mailerlite_shortcode() {
+	remove_shortcode( 'mailerlite_form' );
+	add_shortcode( 'mailerlite_form', 'randall_hartman_mailerlite_embed' );
+}
+
+/**
+ * Every piece of writing ends with the MailerLite form, once: posts that
+ * already carry the old shortcode get it there instead.
+ */
+add_filter( 'the_content', 'randall_hartman_append_signup', 20 );
+function randall_hartman_append_signup( $content ) {
+	if ( ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() ) {
+		return $content;
+	}
+	if ( false !== strpos( $content, 'ml-embedded' ) || has_shortcode( get_post()->post_content, 'mailerlite_form' ) ) {
+		return $content;
+	}
+	return $content . randall_hartman_mailerlite_embed();
+}

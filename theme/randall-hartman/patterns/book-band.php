@@ -3,7 +3,7 @@
  * Title: The book, with endorsements
  * Slug: randall-hartman/book-band
  * Categories: randall-hartman, call-to-action
- * Description: A God Awful God on a dark band with gold rays, the book cover, the two endorsements and the excerpt button.
+ * Description: A God Awful God on a dark band with gold rays, the book cover, the two endorsements, the excerpt button and a pre-order button to Amazon.
  * Viewport Width: 1400
  *
  * @package randall-hartman
@@ -17,8 +17,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"64%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(54px, 8vw, 124px)","fontWeight":"500"}},"textColor":"paper"} -->
-<h2 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(54px, 8vw, 124px);font-weight:500">A God<br>Awful<br>God</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:64%"><!-- wp:heading {"className":"rh-book-title","style":{"typography":{"fontSize":"clamp(40px, 4.6vw, 66px)","fontWeight":"500"}},"textColor":"paper"} -->
+<h2 class="wp-block-heading rh-book-title has-paper-color has-text-color" style="font-size:clamp(40px, 4.6vw, 66px);font-weight:500">A God Awful God</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontSize":"clamp(22px, 2vw, 28px)","lineHeight":"1.3"},"spacing":{"margin":{"top":"14px"}}},"textColor":"gold"} -->
@@ -42,6 +42,10 @@
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://randall-hartman-kao4zj.subscribepage.io" target="_blank" rel="noreferrer noopener">Read the opening scene free</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"backgroundColor":"paper","textColor":"night"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-night-color has-paper-background-color has-text-color has-background wp-element-button" href="https://www.amazon.com/dp/B0HQDMZQ6B" target="_blank" rel="noreferrer noopener">Pre-order on Amazon</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-text-link"} -->
