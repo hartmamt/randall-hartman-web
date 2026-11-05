@@ -32,7 +32,7 @@ Core blocks only. No page builder, no custom blocks, no required plugins.
 1. Upload and activate the theme. The homepage changes at once; nothing else is needed for it.
 2. Settings > Reading: "A static page". Homepage: any page (for example a new "Home"). Posts page: the existing **Articles** page, renamed "Writing". This keeps `/articles/` as the archive address.
 3. Edit the existing **About me** page: choose the "Full width, no title" template and insert the "About page" pattern. Do the same on **A God Awful God** with the "Book page" pattern. Both keep their current addresses.
-   Add a new page called **Speaking** (address `/speaking/`) with the same template and the "Speaking page" pattern.
+   Add a new page called **Speaking** (address `/speaking/`) with the same template and the "Speaking page" pattern, and a page called **Subscribe** (address `/subscribe/`) with the "Subscribe page" pattern. The header Subscribe button opens it.
 4. Publish a privacy policy page at `/privacy-policy/`.
 5. Check the menus under Appearance > Editor > Navigation.
 

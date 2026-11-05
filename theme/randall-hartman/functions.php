@@ -129,9 +129,25 @@ function randall_hartman_mailerlite_embed() {
 	return '<div class="rh-ml-form"><div class="ml-embedded" data-form="uSJAmM"></div></div>';
 }
 
+/**
+ * Pages that show the MailerLite form: every single post (the form is added
+ * at the end), plus any page whose content holds the form or its shortcode,
+ * such as /subscribe/.
+ */
+function randall_hartman_needs_mailerlite() {
+	if ( is_singular( 'post' ) ) {
+		return true;
+	}
+	if ( ! is_singular() ) {
+		return false;
+	}
+	$content = (string) get_post_field( 'post_content', get_queried_object_id() );
+	return false !== strpos( $content, 'ml-embedded' ) || has_shortcode( $content, 'mailerlite_form' );
+}
+
 add_action( 'wp_head', 'randall_hartman_mailerlite_universal', 20 );
 function randall_hartman_mailerlite_universal() {
-	if ( ! is_singular( 'post' ) ) {
+	if ( ! randall_hartman_needs_mailerlite() ) {
 		return;
 	}
 	?>

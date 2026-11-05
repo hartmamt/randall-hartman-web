@@ -66,6 +66,21 @@ if ( $speaking_pattern && ! get_page_by_path( 'speaking' ) ) {
 	update_post_meta( $speaking_id, '_wp_page_template', 'page-canvas' );
 }
 
+// The Subscribe page, at /subscribe/, where the header Subscribe button goes.
+$subscribe_pattern = $patterns->get_registered( 'randall-hartman/page-subscribe' );
+if ( $subscribe_pattern && ! get_page_by_path( 'subscribe' ) ) {
+	$subscribe_id = wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_title'   => 'Subscribe',
+			'post_name'    => 'subscribe',
+			'post_content' => $subscribe_pattern['content'],
+		)
+	);
+	update_post_meta( $subscribe_id, '_wp_page_template', 'page-canvas' );
+}
+
 // A privacy page for the footer and signup links (wording still to be written with Randall).
 $privacy_id = (int) get_option( 'wp_page_for_privacy_policy' );
 if ( $privacy_id && get_post( $privacy_id ) ) {

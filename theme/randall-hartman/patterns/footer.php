@@ -22,7 +22,7 @@
 
 <!-- wp:navigation-link {"label":"Contact","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
 
-<!-- wp:navigation-link {"label":"Subscribe","url":"https://randall-hartman-kao4zj.subscribepage.io","kind":"custom","opensInNewTab":true,"isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Subscribe","url":"/subscribe/","kind":"custom","isTopLevelLink":true} /-->
 <!-- /wp:navigation -->
 
 <!-- wp:paragraph {"className":"rh-foot-name","style":{"spacing":{"margin":{"top":"40px"}},"typography":{"fontWeight":"400"}},"textColor":"fog","fontFamily":"serif"} -->

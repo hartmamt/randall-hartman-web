@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.10 =
+* Subscribe buttons (header, mobile menu, footer) open the new /subscribe/ page with the MailerLite "Stay Informed" form. New "Subscribe page" pattern.
+
 = 1.0.9 =
 * New mobile menu: dark full-screen overlay with large serif links and an orange Subscribe button. Menu folds up below 960px.
 
