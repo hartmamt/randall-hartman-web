@@ -17,6 +17,11 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.6 =
+* Contact in the header and footer menus.
+* End-of-piece box asks readers who liked the piece to subscribe.
+* Old [mailerlite_form] shortcodes show a Subscribe button.
+
 = 1.0.5 =
 * Book page: drop the "Reserve your copy" section; pre-order lives in the top section.
 

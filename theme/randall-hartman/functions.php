@@ -119,3 +119,22 @@ add_filter( 'excerpt_more', 'randall_hartman_excerpt_more' );
 function randall_hartman_excerpt_more() {
 	return '…';
 }
+
+/**
+ * Old posts end with [mailerlite_form form_id=…], an embedded form from the old
+ * theme. Show the site's own Subscribe button there instead, whether or not the
+ * MailerLite plugin is active, so the text never shows raw and every signup
+ * goes to the same MailerLite page.
+ */
+add_action( 'init', 'randall_hartman_mailerlite_shortcode', 99 );
+function randall_hartman_mailerlite_shortcode() {
+	remove_shortcode( 'mailerlite_form' );
+	add_shortcode( 'mailerlite_form', 'randall_hartman_mailerlite_button' );
+}
+function randall_hartman_mailerlite_button() {
+	return sprintf(
+		'<div class="wp-block-buttons rh-legacy-signup"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="%s" target="_blank" rel="noreferrer noopener">%s</a></div></div>',
+		esc_url( randall_hartman_signup_url() ),
+		esc_html__( 'Join the email list', 'randall-hartman' )
+	);
+}
