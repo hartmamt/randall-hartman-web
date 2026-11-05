@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.9 =
+* New mobile menu: dark full-screen overlay with large serif links and an orange Subscribe button. Menu folds up below 960px.
+
 = 1.0.8 =
 * MailerLite form button in site orange.
 
