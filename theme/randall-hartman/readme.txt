@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.7 =
+* Each piece of writing ends with the MailerLite "Stay Informed" form instead of the dark subscribe box.
+
 = 1.0.6 =
 * Contact in the header and footer menus.
 * End-of-piece box asks readers who liked the piece to subscribe.
