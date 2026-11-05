@@ -17,6 +17,9 @@ WordPress editor. Reusable sections live under Patterns > Randall Hartman.
 
 == Changelog ==
 
+= 1.0.8 =
+* MailerLite form button in site orange.
+
 = 1.0.7 =
 * Each piece of writing ends with the MailerLite "Stay Informed" form instead of the dark subscribe box.
 
